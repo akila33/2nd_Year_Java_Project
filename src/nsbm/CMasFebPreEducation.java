@@ -23,8 +23,15 @@ public class CMasFebPreEducation extends javax.swing.JFrame {
     PreparedStatement pst=null;
     ResultSet rs=null;
     
+    String fac;
+    
     public CMasFebPreEducation() {
         initComponents();
+    }
+    
+    public CMasFebPreEducation(String para){
+        initComponents();
+        this.fac=para;
     }
 
     /**
@@ -145,25 +152,76 @@ public class CMasFebPreEducation extends javax.swing.JFrame {
         } catch (SQLException ex) {
             Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
         }
-        String Sql="UPDATE c_mas_student SET qualificationType=? , institute=? , yearComp=?, gpa=? WHERE sID=(SELECT MAX(sID) AS sID FROM c_mas_student)";
-        try{
-            pst=conn.prepareStatement(Sql);
-            pst.setString(1,txtqType.getText());
-            pst.setString(2,txtinstitute.getText());
-            pst.setString(3,txtyearComp.getText());
-            pst.setString(4,txtgpa.getText());
-            pst.executeUpdate();
-            if(true){
-                CMasFebEnroll cmfe=new CMasFebEnroll();
-                cmfe.setVisible(true);
-                //System.exit(0);
+        
+        if(fac=="Computing")
+        {
+            String Sql="UPDATE c_mas_student SET qualificationType=? , institute=? , yearComp=?, gpa=? WHERE sID=(SELECT MAX(sID) AS sID FROM c_mas_student)";
+            try{
+                pst=conn.prepareStatement(Sql);
+                pst.setString(1,txtqType.getText());
+                pst.setString(2,txtinstitute.getText());
+                pst.setString(3,txtyearComp.getText());
+                pst.setString(4,txtgpa.getText());
+                pst.executeUpdate();
+                if(true){
+                    CMasFebEnroll cmfe=new CMasFebEnroll();
+                    cmfe.setVisible(true);
+                    //System.exit(0);
+                }
+                else{
+                    JOptionPane.showMessageDialog(null, "Invalid username or password","Access Denied", JOptionPane.ERROR_MESSAGE);
+                }
+            }catch(Exception e){
+                JOptionPane.showMessageDialog(null, e);
             }
-            else{
-                JOptionPane.showMessageDialog(null, "Invalid username or password","Access Denied", JOptionPane.ERROR_MESSAGE);
-            }
-        }catch(Exception e){
-            JOptionPane.showMessageDialog(null, e);
         }
+        
+        else if(fac=="Business")
+        {
+            String Sql="UPDATE b_mas_student SET qualificationType=? , institute=? , yearComp=?, gpa=? WHERE sID=(SELECT MAX(sID) AS sID FROM b_mas_student)";
+            try{
+                pst=conn.prepareStatement(Sql);
+                pst.setString(1,txtqType.getText());
+                pst.setString(2,txtinstitute.getText());
+                pst.setString(3,txtyearComp.getText());
+                pst.setString(4,txtgpa.getText());
+                pst.executeUpdate();
+                if(true){
+                    CMasFebEnroll cmfe=new CMasFebEnroll();
+                    cmfe.setVisible(true);
+                    //System.exit(0);
+                }
+                else{
+                    JOptionPane.showMessageDialog(null, "Invalid username or password","Access Denied", JOptionPane.ERROR_MESSAGE);
+                }
+            }catch(Exception e){
+                JOptionPane.showMessageDialog(null, e);
+            }
+        }
+        
+        if(fac=="Engineering")
+        {
+            String Sql="UPDATE e_mas_student SET qualificationType=? , institute=? , yearComp=?, gpa=? WHERE sID=(SELECT MAX(sID) AS sID FROM e_mas_student)";
+            try{
+                pst=conn.prepareStatement(Sql);
+                pst.setString(1,txtqType.getText());
+                pst.setString(2,txtinstitute.getText());
+                pst.setString(3,txtyearComp.getText());
+                pst.setString(4,txtgpa.getText());
+                pst.executeUpdate();
+                if(true){
+                    CMasFebEnroll cmfe=new CMasFebEnroll();
+                    cmfe.setVisible(true);
+                    //System.exit(0);
+                }
+                else{
+                    JOptionPane.showMessageDialog(null, "Invalid username or password","Access Denied", JOptionPane.ERROR_MESSAGE);
+                }
+            }catch(Exception e){
+                JOptionPane.showMessageDialog(null, e);
+            }
+        }
+        
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**

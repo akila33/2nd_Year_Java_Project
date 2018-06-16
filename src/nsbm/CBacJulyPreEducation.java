@@ -23,8 +23,15 @@ public class CBacJulyPreEducation extends javax.swing.JFrame {
     PreparedStatement pst=null;
     ResultSet rs=null;
     
+    String fac;
+    
     public CBacJulyPreEducation() {
         initComponents();
+    }
+    
+    public CBacJulyPreEducation(String para){
+        initComponents();
+        this.fac=para;
     }
 
     /**
@@ -149,22 +156,68 @@ public class CBacJulyPreEducation extends javax.swing.JFrame {
         } catch (SQLException ex) {
             Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
         }
-        String Sql="UPDATE c_bac_student SET alResult=? , zScore=? , rank=? WHERE sID=(SELECT MAX(sID) as sID FROM c_bac_student)";
-        try{
-            pst=conn.prepareStatement(Sql);
-            pst.setString(1,txtresult.getText());
-            pst.setString(2,txtscore.getText());
-            pst.setString(3,txtrank.getText());
-            pst.executeUpdate();
-            if(true){
-                CBacJulyEnroll cbje=new CBacJulyEnroll();
-                cbje.setVisible(true);
+        
+        if(fac=="Computing")
+        {
+            String Sql="UPDATE c_bac_student SET alResult=? , zScore=? , rank=? WHERE sID=(Select max(sID) as sID from c_bac_student)";
+            try{
+                pst=conn.prepareStatement(Sql);
+                pst.setString(1,txtresult.getText());
+                pst.setString(2,txtscore.getText());
+                pst.setString(3,txtrank.getText());
+                pst.executeUpdate();
+                if(true){
+                    CBacJulyEnroll cbje=new CBacJulyEnroll();
+                    cbje.setVisible(true);
+                }
+                else{
+                    JOptionPane.showMessageDialog(null, "Invalid username or password","Access Denied", JOptionPane.ERROR_MESSAGE);
+                }
+            }catch(Exception e){
+                JOptionPane.showMessageDialog(null, e);
             }
-            else{
-                JOptionPane.showMessageDialog(null, "Invalid username or password","Access Denied", JOptionPane.ERROR_MESSAGE);
+        }
+        
+        else if(fac=="Business")
+        {
+            String Sql="UPDATE b_bac_student SET alResult=? , zScore=? , rank=? WHERE sID=(Select max(sID) as sID from b_bac_student)";
+            try{
+                pst=conn.prepareStatement(Sql);
+                pst.setString(1,txtresult.getText());
+                pst.setString(2,txtscore.getText());
+                pst.setString(3,txtrank.getText());
+                pst.executeUpdate();
+                if(true){
+                    CBacJulyEnroll cbje=new CBacJulyEnroll();
+                    cbje.setVisible(true);
+                }
+                else{
+                    JOptionPane.showMessageDialog(null, "Invalid username or password","Access Denied", JOptionPane.ERROR_MESSAGE);
+                }
+            }catch(Exception e){
+                JOptionPane.showMessageDialog(null, e);
             }
-        }catch(Exception e){
-            JOptionPane.showMessageDialog(null, e);
+        }
+        
+        else if(fac=="Enginnering")
+        {
+            String Sql="UPDATE e_bac_student SET alResult=? , zScore=? , rank=? WHERE sID=(Select max(sID) as sID from e_bac_student)";
+            try{
+                pst=conn.prepareStatement(Sql);
+                pst.setString(1,txtresult.getText());
+                pst.setString(2,txtscore.getText());
+                pst.setString(3,txtrank.getText());
+                pst.executeUpdate();
+                if(true){
+                    CBacJulyEnroll cbje=new CBacJulyEnroll();
+                    cbje.setVisible(true);
+                }
+                else{
+                    JOptionPane.showMessageDialog(null, "Invalid username or password","Access Denied", JOptionPane.ERROR_MESSAGE);
+                }
+            }catch(Exception e){
+                JOptionPane.showMessageDialog(null, e);
+            }
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 

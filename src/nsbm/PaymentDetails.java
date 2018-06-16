@@ -9,13 +9,168 @@ package nsbm;
  *
  * @author Rangoda
  */
+
+import java.sql.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.*;
+
 public class PaymentDetails extends javax.swing.JFrame {
 
     /**
      * Creates new form PaymentDetails
      */
+    
+    Connection conn=null;
+    PreparedStatement pst=null;
+    ResultSet rs=null;
+    
+    static String[] values;
+    static String fac;
+    
     public PaymentDetails() {
         initComponents();
+    }
+    
+    public PaymentDetails(String[] para1, String para2)
+    {
+        initComponents();
+        this.values=para1;
+        this.fac=para2;
+        add();
+        calculate();
+    }
+    
+    public void add()
+    {
+        try
+        {          
+            DefaultListModel dlm=new DefaultListModel();
+            for(int i=0; i<values.length; i++)
+            {
+                //opt=opt+values[i]+"\n";
+                //txtsubjects.setText(opt);
+                dlm.addElement(values[i]);
+            }
+            listsubjects.setModel(dlm);
+        }
+        catch(Exception e)
+        {
+            JOptionPane.showMessageDialog(null, e);
+        }
+    }
+    
+    public void calculate()
+    {
+        if(fac=="Computing")
+        {
+            try
+            {
+                conn=MySqlConnect.ConnectDB();
+                double amount=0.0;
+                String temp;
+
+                for(int i=0; i<values.length; i++)
+                {
+
+                    //System.out.println("aaa");
+                    String q="select * from c_subject where name='"+values[i]+"'";
+                    pst=conn.prepareStatement(q);
+                    rs=pst.executeQuery();
+                    //System.out.println("aaa");
+                    //System.out.println(rs.getString("price"));
+
+                    if(rs.next())
+                    {
+                        temp=rs.getString("price");
+                        amount=amount+Double.parseDouble(temp);
+                        //System.out.println(amount);
+                    }
+
+                }
+                //System.out.println(amount);
+                txtpay.setText(String.valueOf(amount));
+
+            }
+            catch(Exception e)
+            {
+                JOptionPane.showMessageDialog(null, e);
+            }
+        }
+        
+        
+        if(fac=="Business")
+        {
+            try
+            {
+                conn=MySqlConnect.ConnectDB();
+                double amount=0.0;
+                String temp;
+
+                for(int i=0; i<values.length; i++)
+                {
+
+                    //System.out.println("aaa");
+                    String q="select * from b_subject where name='"+values[i]+"'";
+                    pst=conn.prepareStatement(q);
+                    rs=pst.executeQuery();
+                    //System.out.println("aaa");
+                    //System.out.println(rs.getString("price"));
+
+                    if(rs.next())
+                    {
+                        temp=rs.getString("price");
+                        amount=amount+Double.parseDouble(temp);
+                        //System.out.println(amount);
+                    }
+
+                }
+                //System.out.println(amount);
+                txtpay.setText(String.valueOf(amount));
+
+            }
+            catch(Exception e)
+            {
+                JOptionPane.showMessageDialog(null, e);
+            }
+        }
+        
+        if(fac=="Engineering")
+        {
+            try
+            {
+                conn=MySqlConnect.ConnectDB();
+                double amount=0.0;
+                String temp;
+
+                for(int i=0; i<values.length; i++)
+                {
+
+                    //System.out.println("aaa");
+                    String q="select * from e_subject where name='"+values[i]+"'";
+                    pst=conn.prepareStatement(q);
+                    rs=pst.executeQuery();
+                    //System.out.println("aaa");
+                    //System.out.println(rs.getString("price"));
+
+                    if(rs.next())
+                    {
+                        temp=rs.getString("price");
+                        amount=amount+Double.parseDouble(temp);
+                        //System.out.println(amount);
+                    }
+
+                }
+                //System.out.println(amount);
+                txtpay.setText(String.valueOf(amount));
+
+            }
+            catch(Exception e)
+            {
+                JOptionPane.showMessageDialog(null, e);
+            }
+        }
+        
     }
 
     /**
@@ -29,34 +184,80 @@ public class PaymentDetails extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        txtpay = new javax.swing.JTextField();
+        jButton1 = new javax.swing.JButton();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        listsubjects = new javax.swing.JList<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel1.setText("Payment Details");
 
+        jLabel2.setText("Subjects:");
+
+        jLabel3.setText("Payment:");
+
+        jButton1.setText("Close");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
+        jScrollPane2.setViewportView(listsubjects);
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(146, Short.MAX_VALUE)
-                .addComponent(jLabel1)
-                .addGap(144, 144, 144))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(44, 44, 44)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel2)
+                            .addComponent(jLabel3))
+                        .addGap(68, 68, 68)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtpay, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel1)
+                        .addGap(68, 68, 68)))
+                .addGap(299, 299, 299))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jButton1)
+                .addGap(246, 246, 246))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(22, 22, 22)
                 .addComponent(jLabel1)
-                .addContainerGap(261, Short.MAX_VALUE))
+                .addGap(34, 34, 34)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel2)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 31, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtpay, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel3))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jButton1)
+                .addGap(36, 36, 36))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 441, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -65,6 +266,13 @@ public class PaymentDetails extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        CHome h=new CHome();
+        h.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -96,13 +304,19 @@ public class PaymentDetails extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new PaymentDetails().setVisible(true);
+                new PaymentDetails(values, fac).setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JList<String> listsubjects;
+    private javax.swing.JTextField txtpay;
     // End of variables declaration//GEN-END:variables
 }

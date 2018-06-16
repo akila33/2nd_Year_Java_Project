@@ -55,6 +55,8 @@ public class CPersonalDetails extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         combo_intake = new javax.swing.JComboBox<>();
         jButton1 = new javax.swing.JButton();
+        jLabel7 = new javax.swing.JLabel();
+        combo_faculty = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -121,6 +123,11 @@ public class CPersonalDetails extends javax.swing.JFrame {
         jLabel6.setText("Intake");
 
         combo_intake.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Feb", "July" }));
+        combo_intake.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                combo_intakeActionPerformed(evt);
+            }
+        });
 
         jButton1.setText("Next");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -129,12 +136,16 @@ public class CPersonalDetails extends javax.swing.JFrame {
             }
         });
 
+        jLabel7.setText("Faculty");
+
+        combo_faculty.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Computing", "Business", "Engineering" }));
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap(49, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(50, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -145,38 +156,45 @@ public class CPersonalDetails extends javax.swing.JFrame {
                                 .addComponent(jLabel4)
                                 .addComponent(jLabel3)
                                 .addComponent(jLabel6)
-                                .addComponent(jLabel5))
+                                .addComponent(jLabel5)
+                                .addComponent(jLabel7))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(fName)
                                 .addGap(9, 9, 9)))
-                        .addGap(70, 70, 70)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(txtlName, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(txtdob, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(txtaddress, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(txttelNo, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(txtemail, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(txtfName, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(combo_type, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(71, 71, 71)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(combo_intake, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(78, 78, 78)))
-                        .addGap(174, 174, 174))
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(combo_faculty, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addComponent(combo_type, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(combo_intake, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGap(38, 38, 38)))
+                                .addContainerGap())
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(txtlName, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtdob, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtaddress, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txttelNo, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtemail, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtfName, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(174, 174, 174))))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addComponent(jButton1)
-                        .addGap(58, 58, 58))))
+                        .addGap(44, 44, 44))))
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(120, 120, 120)
+                .addGap(121, 121, 121)
                 .addComponent(jLabel2)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGap(24, 24, 24)
                 .addComponent(jLabel2)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtfName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(fName))
@@ -200,17 +218,21 @@ public class CPersonalDetails extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
                     .addComponent(txtemail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addGap(26, 26, 26)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel7)
+                    .addComponent(combo_faculty, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(51, 51, 51)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(combo_type, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel5))
-                .addGap(50, 50, 50)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel6)
-                    .addComponent(combo_intake, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                    .addComponent(combo_intake, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel6))
+                .addGap(43, 43, 43)
                 .addComponent(jButton1)
-                .addGap(91, 91, 91))
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -265,69 +287,208 @@ public class CPersonalDetails extends javax.swing.JFrame {
         }
         String value1=combo_type.getSelectedItem().toString();
         String value2=combo_intake.getSelectedItem().toString();
+        String fac=combo_faculty.getSelectedItem().toString();
         
-        if(value1=="Bsc")
+        //new CBacFebPreEducation(fac);
+        
+        if(fac=="Computing")
         {
-            String Sql="INSERT INTO c_bac_student (fName,lName,dob,address,telNo,email,intake) values (?,?,?,?,?,?,?)";
-            try{
-                pst=conn.prepareStatement(Sql);
-                pst.setString(1,txtfName.getText());
-                pst.setString(2,txtlName.getText());
-                pst.setString(3,txtdob.getText());
-                pst.setString(4,txtaddress.getText());
-                pst.setString(5,txttelNo.getText());
-                pst.setString(6,txtemail.getText());
+            if(value1=="Bsc")
+            {
+                String Sql="INSERT INTO c_bac_student (fName,lName,dob,address,telNo,email,intake) values (?,?,?,?,?,?,?)";
+                try{
+                    pst=conn.prepareStatement(Sql);
+                    pst.setString(1,txtfName.getText());
+                    pst.setString(2,txtlName.getText());
+                    pst.setString(3,txtdob.getText());
+                    pst.setString(4,txtaddress.getText());
+                    pst.setString(5,txttelNo.getText());
+                    pst.setString(6,txtemail.getText());
 
 
-                pst.setString(7,value2);
+                    pst.setString(7,value2);
 
-                pst.executeUpdate();
-                //if(rs.next()){
-                    if(value2=="Feb"){
-                        CBacFebPreEducation cbfpe=new CBacFebPreEducation();
-                        cbfpe.setVisible(true);
+                    pst.executeUpdate();
+                    //if(rs.next()){
+                        if(value2=="Feb"){
+                            CBacFebPreEducation cbfpe=new CBacFebPreEducation(fac);
+                            cbfpe.setVisible(true);
+                        }
+                        else if(value2=="July"){
+                            CBacJulyPreEducation cbjpe=new CBacJulyPreEducation(fac);
+                            cbjpe.setVisible(true);
+                        }
+
+                    }catch(Exception e){
+                        JOptionPane.showMessageDialog(null, e);
                     }
-                    else if(value2=="July"){
-                        CBacJulyPreEducation cbjpe=new CBacJulyPreEducation();
-                        cbjpe.setVisible(true);
+            }
+
+            else if(value1=="Msc")
+            {
+                String Sql="INSERT INTO c_mas_student (fName,lName,dob,address,telNo,email,intake) values (?,?,?,?,?,?,?)";
+                try{
+                    pst=conn.prepareStatement(Sql);
+                    pst.setString(1,txtfName.getText());
+                    pst.setString(2,txtlName.getText());
+                    pst.setString(3,txtdob.getText());
+                    pst.setString(4,txtaddress.getText());
+                    pst.setString(5,txttelNo.getText());
+                    pst.setString(6,txtemail.getText());
+
+
+                    pst.setString(7,value2);
+
+                    pst.executeUpdate();
+                    //if(rs.next()){
+
+                        if(value2=="Feb"){
+                            CMasFebPreEducation cmfpe=new CMasFebPreEducation(fac);
+                            cmfpe.setVisible(true);
+                        }
+                        else if(value2=="July"){
+                            CMasJulyPreEducation cmjpe=new CMasJulyPreEducation(fac);
+                            cmjpe.setVisible(true);
+                        }
+                    }catch(Exception e){
+                        JOptionPane.showMessageDialog(null, e);
                     }
-                   
-                }catch(Exception e){
-                    JOptionPane.showMessageDialog(null, e);
-                }
+            }
+        }
+        else if(fac=="Business")
+        {
+            if(value1=="Bsc")
+            {
+                String Sql="INSERT INTO b_bac_student (fName,lName,dob,address,telNo,email,intake) values (?,?,?,?,?,?,?)";
+                try{
+                    pst=conn.prepareStatement(Sql);
+                    pst.setString(1,txtfName.getText());
+                    pst.setString(2,txtlName.getText());
+                    pst.setString(3,txtdob.getText());
+                    pst.setString(4,txtaddress.getText());
+                    pst.setString(5,txttelNo.getText());
+                    pst.setString(6,txtemail.getText());
+
+
+                    pst.setString(7,value2);
+
+                    pst.executeUpdate();
+                    //if(rs.next()){
+                        if(value2=="Feb"){
+                            CBacFebPreEducation cbfpe=new CBacFebPreEducation(fac);
+                            cbfpe.setVisible(true);
+                        }
+                        else if(value2=="July"){
+                            CBacJulyPreEducation cbjpe=new CBacJulyPreEducation(fac);
+                            cbjpe.setVisible(true);
+                        }
+
+                    }catch(Exception e){
+                        JOptionPane.showMessageDialog(null, e);
+                    }
+            }
+
+            else if(value1=="Msc")
+            {
+                String Sql="INSERT INTO b_mas_student (fName,lName,dob,address,telNo,email,intake) values (?,?,?,?,?,?,?)";
+                try{
+                    pst=conn.prepareStatement(Sql);
+                    pst.setString(1,txtfName.getText());
+                    pst.setString(2,txtlName.getText());
+                    pst.setString(3,txtdob.getText());
+                    pst.setString(4,txtaddress.getText());
+                    pst.setString(5,txttelNo.getText());
+                    pst.setString(6,txtemail.getText());
+
+
+                    pst.setString(7,value2);
+
+                    pst.executeUpdate();
+                    //if(rs.next()){
+
+                        if(value2=="Feb"){
+                            CMasFebPreEducation cmfpe=new CMasFebPreEducation(fac);
+                            cmfpe.setVisible(true);
+                        }
+                        else if(value2=="July"){
+                            CMasJulyPreEducation cmjpe=new CMasJulyPreEducation(fac);
+                            cmjpe.setVisible(true);
+                        }
+                    }catch(Exception e){
+                        JOptionPane.showMessageDialog(null, e);
+                    }
+            }
+        }
+        else if(fac=="Engineering")
+        {
+            if(value1=="Bsc")
+            {
+                String Sql="INSERT INTO e_bac_student (fName,lName,dob,address,telNo,email,intake) values (?,?,?,?,?,?,?)";
+                try{
+                    pst=conn.prepareStatement(Sql);
+                    pst.setString(1,txtfName.getText());
+                    pst.setString(2,txtlName.getText());
+                    pst.setString(3,txtdob.getText());
+                    pst.setString(4,txtaddress.getText());
+                    pst.setString(5,txttelNo.getText());
+                    pst.setString(6,txtemail.getText());
+
+
+                    pst.setString(7,value2);
+
+                    pst.executeUpdate();
+                    //if(rs.next()){
+                        if(value2=="Feb"){
+                            CBacFebPreEducation cbfpe=new CBacFebPreEducation(fac);
+                            cbfpe.setVisible(true);
+                        }
+                        else if(value2=="July"){
+                            CBacJulyPreEducation cbjpe=new CBacJulyPreEducation(fac);
+                            cbjpe.setVisible(true);
+                        }
+
+                    }catch(Exception e){
+                        JOptionPane.showMessageDialog(null, e);
+                    }
+            }
+
+            else if(value1=="Msc")
+            {
+                String Sql="INSERT INTO e_mas_student (fName,lName,dob,address,telNo,email,intake) values (?,?,?,?,?,?,?)";
+                try{
+                    pst=conn.prepareStatement(Sql);
+                    pst.setString(1,txtfName.getText());
+                    pst.setString(2,txtlName.getText());
+                    pst.setString(3,txtdob.getText());
+                    pst.setString(4,txtaddress.getText());
+                    pst.setString(5,txttelNo.getText());
+                    pst.setString(6,txtemail.getText());
+
+
+                    pst.setString(7,value2);
+
+                    pst.executeUpdate();
+                    //if(rs.next()){
+
+                        if(value2=="Feb"){
+                            CMasFebPreEducation cmfpe=new CMasFebPreEducation(fac);
+                            cmfpe.setVisible(true);
+                        }
+                        else if(value2=="July"){
+                            CMasJulyPreEducation cmjpe=new CMasJulyPreEducation(fac);
+                            cmjpe.setVisible(true);
+                        }
+                    }catch(Exception e){
+                        JOptionPane.showMessageDialog(null, e);
+                    }
+            }
         }
         
-        else if(value1=="Msc")
-        {
-            String Sql="INSERT INTO c_mas_student (fName,lName,dob,address,telNo,email,intake) values (?,?,?,?,?,?,?)";
-            try{
-                pst=conn.prepareStatement(Sql);
-                pst.setString(1,txtfName.getText());
-                pst.setString(2,txtlName.getText());
-                pst.setString(3,txtdob.getText());
-                pst.setString(4,txtaddress.getText());
-                pst.setString(5,txttelNo.getText());
-                pst.setString(6,txtemail.getText());
-
-
-                pst.setString(7,value2);
-
-                pst.executeUpdate();
-                //if(rs.next()){
-                    
-                    if(value2=="Feb"){
-                        CMasFebPreEducation cmfpe=new CMasFebPreEducation();
-                        cmfpe.setVisible(true);
-                    }
-                    else if(value2=="July"){
-                        CMasJulyPreEducation cmjpe=new CMasJulyPreEducation();
-                        cmjpe.setVisible(true);
-                    }
-                }catch(Exception e){
-                    JOptionPane.showMessageDialog(null, e);
-                }
-        }
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void combo_intakeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_combo_intakeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_combo_intakeActionPerformed
 
 //    public String getVariable()
 //    {
@@ -371,6 +532,7 @@ public class CPersonalDetails extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JComboBox<String> combo_faculty;
     private javax.swing.JComboBox<String> combo_intake;
     private javax.swing.JComboBox<String> combo_type;
     private javax.swing.JLabel dob;
@@ -382,6 +544,7 @@ public class CPersonalDetails extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel lName;
     private javax.swing.JTextField txtaddress;

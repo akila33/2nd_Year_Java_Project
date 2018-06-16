@@ -50,6 +50,12 @@ public class CAddSubject extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         txtcredits = new javax.swing.JTextField();
         txtprice = new javax.swing.JTextField();
+        jLabel7 = new javax.swing.JLabel();
+        combo_faculty = new javax.swing.JComboBox<>();
+        jLabel8 = new javax.swing.JLabel();
+        combo_sem = new javax.swing.JComboBox<>();
+        jLabel9 = new javax.swing.JLabel();
+        combo_category = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -81,14 +87,22 @@ public class CAddSubject extends javax.swing.JFrame {
             }
         });
 
+        jLabel7.setText("Faculty");
+
+        combo_faculty.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Computing", "Business", "Engineering" }));
+
+        jLabel8.setText("Semester");
+
+        combo_sem.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Sem1", "Sem2" }));
+
+        jLabel9.setText("Category");
+
+        combo_category.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2" }));
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton1)
-                .addGap(68, 68, 68))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(140, 140, 140)
                 .addComponent(jLabel4)
@@ -100,44 +114,71 @@ public class CAddSubject extends javax.swing.JFrame {
                     .addComponent(jLabel2)
                     .addComponent(jLabel3)
                     .addComponent(jLabel5)
-                    .addComponent(jLabel6))
+                    .addComponent(jLabel6)
+                    .addComponent(jLabel7)
+                    .addComponent(jLabel8))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(txtsubID, javax.swing.GroupLayout.DEFAULT_SIZE, 96, Short.MAX_VALUE)
-                    .addComponent(combo_cType, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtname)
-                    .addComponent(txtcredits)
-                    .addComponent(txtprice))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(combo_sem, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtprice, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(combo_faculty, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(txtsubID, javax.swing.GroupLayout.DEFAULT_SIZE, 96, Short.MAX_VALUE)
+                        .addComponent(combo_cType, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtname)
+                        .addComponent(txtcredits)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(combo_category, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButton1))
+                        .addGap(37, 37, 37))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel9)
+                        .addGap(46, 46, 46))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(20, 20, 20)
                 .addComponent(jLabel4)
-                .addGap(29, 29, 29)
+                .addGap(17, 17, 17)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel7)
+                    .addComponent(combo_faculty, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
+                .addComponent(jLabel9)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(combo_cType, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel1))
-                .addGap(41, 41, 41)
+                    .addComponent(jLabel1)
+                    .addComponent(combo_category, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(34, 34, 34)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(txtsubID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                    .addComponent(combo_sem, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel8))
+                .addGap(35, 35, 35)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(txtname, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                    .addComponent(txtsubID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel3))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5)
-                    .addComponent(txtcredits, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                    .addComponent(txtname, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel2))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel6)
-                    .addComponent(txtprice, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 21, Short.MAX_VALUE)
+                    .addComponent(txtcredits, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel5))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtprice, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel6))
+                .addGap(24, 24, 24)
                 .addComponent(jButton1)
-                .addGap(80, 80, 80))
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -165,29 +206,109 @@ public class CAddSubject extends javax.swing.JFrame {
         } catch (SQLException ex) {
             Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
         }
-        String Sql="INSERT INTO c_subject (subID,name,cType,credits,price) values (?,?,?,?,?)";
-        try{
-            pst=conn.prepareStatement(Sql);
-            pst.setString(1,txtsubID.getText());
-            pst.setString(2,txtname.getText());
-            
-            String value=combo_cType.getSelectedItem().toString();
-            pst.setString(3,value);
-            
-            pst.setString(4,txtcredits.getText());
-            pst.setString(5,txtprice.getText());
-            
-            pst.executeUpdate();
-            if(true){
-                JOptionPane.showMessageDialog(null, "Record added successfully");
-                System.exit(0);
+        
+        String value1=combo_faculty.getSelectedItem().toString();
+        
+        if(value1=="Computing")
+        {
+            String Sql="INSERT INTO c_subject (subID,name,cType,credits,price,category,semester) values (?,?,?,?,?,?,?)";
+            try{
+                pst=conn.prepareStatement(Sql);
+                pst.setString(1,txtsubID.getText());
+                pst.setString(2,txtname.getText());
+
+                String value2=combo_cType.getSelectedItem().toString();
+                pst.setString(3,value2);
+
+                pst.setString(4,txtcredits.getText());
+                pst.setString(5,txtprice.getText());
+                
+                String value3=combo_category.getSelectedItem().toString();
+                pst.setString(6,value3);
+                
+                String value4=combo_sem.getSelectedItem().toString();
+                pst.setString(7,value4);
+
+                pst.executeUpdate();
+                if(true){
+                    JOptionPane.showMessageDialog(null, "Record added successfully");
+                    System.exit(0);
+                }
+                else{
+                    JOptionPane.showMessageDialog(null, "Invalid username or password","Access Denied", JOptionPane.ERROR_MESSAGE);
+                }
+            }catch(Exception e){
+                JOptionPane.showMessageDialog(null, e);
             }
-            else{
-                JOptionPane.showMessageDialog(null, "Invalid username or password","Access Denied", JOptionPane.ERROR_MESSAGE);
-            }
-        }catch(Exception e){
-            JOptionPane.showMessageDialog(null, e);
         }
+        
+        if(value1=="Business")
+        {
+            String Sql="INSERT INTO b_subject (subID,name,cType,credits,price,category,semester) values (?,?,?,?,?,?,?)";
+            try{
+                pst=conn.prepareStatement(Sql);
+                pst.setString(1,txtsubID.getText());
+                pst.setString(2,txtname.getText());
+
+                String value=combo_cType.getSelectedItem().toString();
+                pst.setString(3,value);
+
+                pst.setString(4,txtcredits.getText());
+                pst.setString(5,txtprice.getText());
+                
+                String value3=combo_category.getSelectedItem().toString();
+                pst.setString(6,value3);
+                
+                String value4=combo_sem.getSelectedItem().toString();
+                pst.setString(7,value4);
+
+                pst.executeUpdate();
+                if(true){
+                    JOptionPane.showMessageDialog(null, "Record added successfully");
+                    System.exit(0);
+                }
+                else{
+                    JOptionPane.showMessageDialog(null, "Invalid username or password","Access Denied", JOptionPane.ERROR_MESSAGE);
+                }
+            }catch(Exception e){
+                JOptionPane.showMessageDialog(null, e);
+            }
+        }
+        
+        if(value1=="Engineering")
+        {
+            String Sql="INSERT INTO e_subject (subID,name,cType,credits,price,category,semester) values (?,?,?,?,?,?,?)";
+            try{
+                pst=conn.prepareStatement(Sql);
+                pst.setString(1,txtsubID.getText());
+                pst.setString(2,txtname.getText());
+
+                String value=combo_cType.getSelectedItem().toString();
+                pst.setString(3,value);
+
+                pst.setString(4,txtcredits.getText());
+                pst.setString(5,txtprice.getText());
+                
+                String value3=combo_category.getSelectedItem().toString();
+                pst.setString(6,value3);
+                
+                String value4=combo_sem.getSelectedItem().toString();
+                pst.setString(7,value4);
+
+                pst.executeUpdate();
+                if(true){
+                    JOptionPane.showMessageDialog(null, "Record added successfully");
+                    System.exit(0);
+                }
+                else{
+                    JOptionPane.showMessageDialog(null, "Invalid username or password","Access Denied", JOptionPane.ERROR_MESSAGE);
+                }
+            }catch(Exception e){
+                JOptionPane.showMessageDialog(null, e);
+            }
+        }
+        
+        
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void txtcreditsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtcreditsActionPerformed
@@ -231,6 +352,9 @@ public class CAddSubject extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> combo_cType;
+    private javax.swing.JComboBox<String> combo_category;
+    private javax.swing.JComboBox<String> combo_faculty;
+    private javax.swing.JComboBox<String> combo_sem;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -238,6 +362,9 @@ public class CAddSubject extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField txtcredits;
     private javax.swing.JTextField txtname;

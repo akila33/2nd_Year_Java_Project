@@ -9,6 +9,7 @@ package nsbm;
  *
  * @author Rangoda
  */
+//import java.lang.NullPointerException;
 import java.sql.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -23,8 +24,433 @@ public class CBacFebEnroll extends javax.swing.JFrame {
     PreparedStatement pst=null;
     ResultSet rs=null;
     
+    static String fac;
+    
     public CBacFebEnroll() {
         initComponents();
+        
+    }
+
+    public CBacFebEnroll(String para){
+        initComponents();
+        this.fac=para;
+        setvalues();
+        
+    }    
+    
+    //Allocate subjects for selection
+    private void setvalues()
+    {
+        //sub11.addItem("Web".toString());
+        
+        if(fac=="Computing")
+        {
+            //Semester 1 subject allocation
+        
+            try
+            {
+                conn=MySqlConnect.ConnectDB();
+                //System.out.println("yellow");
+                String sql="SELECT * FROM c_subject WHERE credits=3 AND cType='Bsc' AND category=1 AND semester='Sem1'";
+                pst=conn.prepareStatement(sql);
+                rs=pst.executeQuery();
+                sub11.removeAllItems();
+                while(rs.next())
+                {
+                    sub11.addItem(rs.getString("name"));
+                    
+                    //System.out.println(sql);
+                }
+                //rs.close();
+                //pst.close();
+            }
+            catch(Exception e)
+            {
+                JOptionPane.showMessageDialog(null, e);
+            }
+
+            try
+            {
+                //System.out.println("yellow");
+                String sql="SELECT * FROM c_subject WHERE credits=3 AND cType='Bsc' AND category=2 AND semester='Sem1'";
+                
+                pst=conn.prepareStatement(sql);
+                rs=pst.executeQuery();
+                sub12.removeAllItems();
+                while(rs.next())
+                {
+                    sub12.addItem(rs.getString("name"));
+                }
+            }
+            catch(Exception e)
+            {
+                JOptionPane.showMessageDialog(null, e);
+            }
+
+            try
+            {
+                String sql="SELECT * FROM c_subject WHERE credits=2 AND cType='Bsc' AND category=1 AND semester='Sem1'";
+                pst=conn.prepareStatement(sql);
+                rs=pst.executeQuery();
+                sub13.removeAllItems();
+                while(rs.next())
+                {
+                    sub13.addItem(rs.getString("name"));
+                }
+            }
+            catch(Exception e)
+            {
+                JOptionPane.showMessageDialog(null, e);
+            }
+
+            try
+            {
+                String sql="SELECT * FROM c_subject WHERE credits=2 AND cType='Bsc' AND category=2 AND semester='Sem1'";
+                pst=conn.prepareStatement(sql);
+                rs=pst.executeQuery();
+                sub14.removeAllItems();
+                while(rs.next())
+                {
+                    sub14.addItem(rs.getString("name"));
+                }
+            }
+            catch(Exception e)
+            {
+                JOptionPane.showMessageDialog(null, e);
+            }
+
+            //Semester 2 subject allocation
+            try
+            {
+                String sql="SELECT * FROM c_subject WHERE credits=3 AND cType='Bsc' AND category=1 AND semester='Sem2'";
+                pst=conn.prepareStatement(sql);
+                rs=pst.executeQuery();
+                sub21.removeAllItems();
+                while(rs.next())
+                {
+                    sub21.addItem(rs.getString("name"));
+                }
+            }
+            catch(Exception e)
+            {
+                JOptionPane.showMessageDialog(null, e);
+            }
+
+            try
+            {
+                String sql="SELECT * FROM c_subject WHERE credits=3 AND cType='Bsc' AND category=2 AND semester='Sem2'";
+                pst=conn.prepareStatement(sql);
+                rs=pst.executeQuery();
+                sub22.removeAllItems();
+                while(rs.next())
+                {
+                    sub22.addItem(rs.getString("name"));
+                }
+            }
+            catch(Exception e)
+            {
+                JOptionPane.showMessageDialog(null, e);
+            }
+
+            try
+            {
+                String sql="SELECT * FROM c_subject WHERE credits=2 AND cType='Bsc' AND category=1 AND semester='Sem2'";
+                pst=conn.prepareStatement(sql);
+                rs=pst.executeQuery();
+                sub23.removeAllItems();
+                while(rs.next())
+                {
+                    sub23.addItem(rs.getString("name"));
+                }
+            }
+            catch(Exception e)
+            {
+                JOptionPane.showMessageDialog(null, e);
+            }
+
+            try
+            {
+                String sql="SELECT * FROM c_subject WHERE credits=2 AND cType='Bsc' AND category=2 AND semester='Sem2'";
+                pst=conn.prepareStatement(sql);
+                rs=pst.executeQuery();
+                sub24.removeAllItems();
+                while(rs.next())
+                {
+                    sub24.addItem(rs.getString("name"));
+                }
+            }
+            catch(Exception e)
+            {
+                JOptionPane.showMessageDialog(null, e);
+            }
+        }
+        
+        if(fac=="Business")
+        {
+            //Semester 1 subject allocation
+            try
+            {
+                String sql="SELECT * FROM b_subject WHERE credits=3 AND cType='Bsc' AND category=1 AND semester='Sem1'";
+                pst=conn.prepareStatement(sql);
+                rs=pst.executeQuery();
+                sub11.removeAllItems();
+                while(rs.next())
+                {
+                    sub11.addItem(rs.getString("name"));
+                }
+            }
+            catch(Exception e)
+            {
+                JOptionPane.showMessageDialog(null, e);
+            }
+
+            try
+            {
+                String sql="SELECT * FROM b_subject WHERE credits=3 AND cType='Bsc' AND category=2 AND semester='Sem1'";
+                pst=conn.prepareStatement(sql);
+                rs=pst.executeQuery();
+                sub12.removeAllItems();
+                while(rs.next())
+                {
+                    sub12.addItem(rs.getString("name"));
+                }
+            }
+            catch(Exception e)
+            {
+                JOptionPane.showMessageDialog(null, e);
+            }
+
+            try
+            {
+                String sql="SELECT * FROM b_subject WHERE credits=2 AND cType='Bsc' AND category=1 AND semester='Sem1'";
+                pst=conn.prepareStatement(sql);
+                rs=pst.executeQuery();
+                sub13.removeAllItems();
+                while(rs.next())
+                {
+                    sub13.addItem(rs.getString("name"));
+                }
+            }
+            catch(Exception e)
+            {
+                JOptionPane.showMessageDialog(null, e);
+            }
+
+            try
+            {
+                String sql="SELECT * FROM b_subject WHERE credits=2 AND cType='Bsc' AND category=2 AND semester='Sem1'";
+                pst=conn.prepareStatement(sql);
+                rs=pst.executeQuery();
+                sub14.removeAllItems();
+                while(rs.next())
+                {
+                    sub14.addItem(rs.getString("name"));
+                }
+            }
+            catch(Exception e)
+            {
+                JOptionPane.showMessageDialog(null, e);
+            }
+
+            //Semester 2 subject allocation
+            try
+            {
+                String sql="SELECT * FROM b_subject WHERE credits=3 AND cType='Bsc' AND category=1 AND semester='Sem2'";
+                pst=conn.prepareStatement(sql);
+                rs=pst.executeQuery();
+                sub21.removeAllItems();
+                while(rs.next())
+                {
+                    sub21.addItem(rs.getString("name"));
+                }
+            }
+            catch(Exception e)
+            {
+                JOptionPane.showMessageDialog(null, e);
+            }
+
+            try
+            {
+                String sql="SELECT * FROM b_subject WHERE credits=3 AND cType='Bsc' AND category=2 AND semester='Sem2'";
+                pst=conn.prepareStatement(sql);
+                rs=pst.executeQuery();
+                sub22.removeAllItems();
+                while(rs.next())
+                {
+                    sub22.addItem(rs.getString("name"));
+                }
+            }
+            catch(Exception e)
+            {
+                JOptionPane.showMessageDialog(null, e);
+            }
+
+            try
+            {
+                String sql="SELECT * FROM b_subject WHERE credits=2 AND cType='Bsc' AND category=1 AND semester='Sem2'";
+                pst=conn.prepareStatement(sql);
+                rs=pst.executeQuery();
+                sub23.removeAllItems();
+                while(rs.next())
+                {
+                    sub23.addItem(rs.getString("name"));
+                }
+            }
+            catch(Exception e)
+            {
+                JOptionPane.showMessageDialog(null, e);
+            }
+
+            try
+            {
+                String sql="SELECT * FROM b_subject WHERE credits=2 AND cType='Bsc' AND category=2 AND semester='Sem2'";
+                pst=conn.prepareStatement(sql);
+                rs=pst.executeQuery();
+                sub24.removeAllItems();
+                while(rs.next())
+                {
+                    sub24.addItem(rs.getString("name"));
+                }
+            }
+            catch(Exception e)
+            {
+                JOptionPane.showMessageDialog(null, e);
+            }
+        }
+                
+        //Faculty of Engineering
+        else if(fac=="Engineering")
+        {
+            //Semester 1 subject allocation
+            try
+            {
+                String sql="SELECT * FROM e_subject WHERE credits=3 AND cType='Bsc' AND category=1 AND semester='Sem1'";
+                pst=conn.prepareStatement(sql);
+                rs=pst.executeQuery();
+                sub11.removeAllItems();
+                while(rs.next())
+                {
+                    sub11.addItem(rs.getString("name"));
+                }
+            }
+            catch(Exception e)
+            {
+                JOptionPane.showMessageDialog(null, e);
+            }
+
+            try
+            {
+                String sql="SELECT * FROM e_subject WHERE credits=3 AND cType='Bsc' AND category=2 AND semester='Sem1'";
+                pst=conn.prepareStatement(sql);
+                rs=pst.executeQuery();
+                sub12.removeAllItems();
+                while(rs.next())
+                {
+                    sub12.addItem(rs.getString("name"));
+                }
+            }
+            catch(Exception e)
+            {
+                JOptionPane.showMessageDialog(null, e);
+            }
+
+            try
+            {
+                String sql="SELECT * FROM e_subject WHERE credits=2 AND cType='Bsc' AND category=1 AND semester='Sem1'";
+                pst=conn.prepareStatement(sql);
+                rs=pst.executeQuery();
+                sub13.removeAllItems();
+                while(rs.next())
+                {
+                    sub13.addItem(rs.getString("name"));
+                }
+            }
+            catch(Exception e)
+            {
+                JOptionPane.showMessageDialog(null, e);
+            }
+
+            try
+            {
+                String sql="SELECT * FROM e_subject WHERE credits=2 AND cType='Bsc' AND category=2 AND semester='Sem1'";
+                pst=conn.prepareStatement(sql);
+                rs=pst.executeQuery();
+                sub14.removeAllItems();
+                while(rs.next())
+                {
+                    sub14.addItem(rs.getString("name"));
+                }
+            }
+            catch(Exception e)
+            {
+                JOptionPane.showMessageDialog(null, e);
+            }
+
+            //Semester 2 subject allocation
+            try
+            {
+                String sql="SELECT * FROM e_subject WHERE credits=3 AND cType='Bsc' AND category=1 AND semester='Sem2'";
+                pst=conn.prepareStatement(sql);
+                rs=pst.executeQuery();
+                sub21.removeAllItems();
+                while(rs.next())
+                {
+                    sub21.addItem(rs.getString("name"));
+                }
+            }
+            catch(Exception e)
+            {
+                JOptionPane.showMessageDialog(null, e);
+            }
+
+            try
+            {
+                String sql="SELECT * FROM e_subject WHERE credits=3 AND cType='Bsc' AND category=2 AND semester='Sem2'";
+                pst=conn.prepareStatement(sql);
+                rs=pst.executeQuery();
+                sub22.removeAllItems();
+                while(rs.next())
+                {
+                    sub22.addItem(rs.getString("name"));
+                }
+            }
+            catch(Exception e)
+            {
+                JOptionPane.showMessageDialog(null, e);
+            }
+
+            try
+            {
+                String sql="SELECT * FROM e_subject WHERE credits=2 AND cType='Bsc' AND category=1 AND semester='Sem2'";
+                pst=conn.prepareStatement(sql);
+                rs=pst.executeQuery();
+                sub23.removeAllItems();
+                while(rs.next())
+                {
+                    sub23.addItem(rs.getString("name"));
+                }
+            }
+            catch(Exception e)
+            {
+                JOptionPane.showMessageDialog(null, e);
+            }
+
+            try
+            {
+                String sql="SELECT * FROM e_subject WHERE credits=2 AND cType='Bsc' AND category=2 AND semester='Sem2'";
+                pst=conn.prepareStatement(sql);
+                rs=pst.executeQuery();
+                sub24.removeAllItems();
+                while(rs.next())
+                {
+                    sub24.addItem(rs.getString("name"));
+                }
+            }
+            catch(Exception e)
+            {
+                JOptionPane.showMessageDialog(null, e);
+            }
+        }
     }
 
     /**
@@ -72,22 +498,6 @@ public class CBacFebEnroll extends javax.swing.JFrame {
 
         jLabel5.setText("Sem 2:");
 
-        sub11.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Web", "Latex" }));
-
-        sub12.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Python", "Scala" }));
-
-        sub21.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Media", "Graphics" }));
-
-        sub22.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Java", "C#" }));
-
-        sub13.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Maths1", "Stat" }));
-
-        sub14.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Econ", "BS" }));
-
-        sub23.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Discrete", "Logarithms" }));
-
-        sub24.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Accounting", "Management" }));
-
         jButton1.setText("Submit");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -103,41 +513,49 @@ public class CBacFebEnroll extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(174, 174, 174)
-                        .addComponent(jLabel1))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(61, 61, 61)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel3)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel2)
-                                .addGap(78, 78, 78)
-                                .addComponent(txtregNo, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel4)
-                                .addGap(59, 59, 59))))
+                        .addComponent(jLabel1)
+                        .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(51, 51, 51)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(sub11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(sub13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(42, 42, 42)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(sub12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(sub14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(54, 54, 54)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel5)
-                            .addComponent(sub21, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(sub23, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(30, 30, 30)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton1)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(11, 11, 11)
+                                .addGap(0, 408, Short.MAX_VALUE)
+                                .addComponent(sub22, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(sub24, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(231, 231, 231)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(sub24, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(sub22, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))))
-                .addContainerGap(68, Short.MAX_VALUE))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(jLabel5)
+                                        .addGap(0, 0, Short.MAX_VALUE))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(jButton1)
+                                        .addGap(33, 33, 33))))))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(61, 61, 61)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLabel3)
+                                .addGroup(jPanel1Layout.createSequentialGroup()
+                                    .addComponent(jLabel2)
+                                    .addGap(78, 78, 78)
+                                    .addComponent(txtregNo, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(jLabel4))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(sub14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(sub12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(114, 114, 114)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(sub21, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(sub23, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addGap(56, 56, 56))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -177,13 +595,11 @@ public class CBacFebEnroll extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addGap(0, 20, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -201,126 +617,251 @@ public class CBacFebEnroll extends javax.swing.JFrame {
         } catch (SQLException ex) {
             Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
         }
-        String Sql1="UPDATE c_bac_student SET regNo=? where sID=(Select max(sID) as sID from c_bac_student)";
-        
-        try{
-            pst=conn.prepareStatement(Sql1);
-            pst.setString(1,txtregNo.getText());
-            
-            pst.executeUpdate();
-//            if(true){
-//                CBacFebEnroll cbfe=new CBacFebEnroll();
-//                cbfe.setVisible(true);
-//            }
-//            else{
-//                JOptionPane.showMessageDialog(null, "Invalid username or password","Access Denied", JOptionPane.ERROR_MESSAGE);
-//            }
-        }catch(Exception e){
-            JOptionPane.showMessageDialog(null, e);
-        }
-//        String value1=sub11.getSelectedItem().toString();
-//        String value2=sub12.getSelectedItem().toString();
-//        String value3=sub13.getSelectedItem().toString();
-//        String value4=sub14.getSelectedItem().toString();
-//        String value5=sub21.getSelectedItem().toString();
-//        String value6=sub22.getSelectedItem().toString();
-//        String value7=sub23.getSelectedItem().toString();
-//        String value8=sub24.getSelectedItem().toString();
-        
-        String[] values={sub11.getSelectedItem().toString(),sub12.getSelectedItem().toString(),
-                        sub13.getSelectedItem().toString(),sub14.getSelectedItem().toString(),
-                        sub21.getSelectedItem().toString(),sub22.getSelectedItem().toString(),
-                        sub23.getSelectedItem().toString(),sub24.getSelectedItem().toString()};
         
         
-        
-        for(int i=0; i<8; i++)
+        if(fac=="Computing")
         {
-            //String Sql2="INSERT INTO student_subject (regNo,subject) values(?,?)";
-            
-//            String Sql2="SELECT id FROM c_subject WHERE name=values[i]";
-//            try {
-//                pst=conn.prepareStatement(Sql2);
-//            } catch (SQLException ex) {
-//                Logger.getLogger(CBacFebEnroll.class.getName()).log(Level.SEVERE, null, ex);
-//            }
-//            try {
-//                rs=pst.executeQuery();
-//            } catch (SQLException ex) {
-//                Logger.getLogger(CBacFebEnroll.class.getName()).log(Level.SEVERE, null, ex);
-//            }
-            
-//            String Sql2="INSERT INTO c_bac_student_subject (sID, id) \n" +
-//                        "SELECT c_bac_student.sID, c_subject.id \n" +
-//                        "FROM c_bac_student, c_subject \n" +
-//                        "WHERE c_bac_student.regNo='txtregNo.getText()' \n" +
-//                        "AND c_subject.name='values[i]'";
-            
-//            String Sql2="INSERT INTO c_bac_student_subject (sID, id) SELECT c_bac_student.sID, c_subject.id FROM c_bac_student, c_subject WHERE c_bac_student.regNo='txtregNo.getText().toString()' AND c_subject.name='values[i]'";
-            
-            String val1=txtregNo.getText().toString();
-            String val2=values[i];
-            
-            String x="select sID from c_bac_student where regNo='"+val1+"'";
-            try {
-                pst=conn.prepareStatement(x);
-            } catch (SQLException ex) {
-                Logger.getLogger(CBacFebEnroll.class.getName()).log(Level.SEVERE, null, ex);
-            }
-            try {
-                //pst.setString(1,txtregNo.getText());
-                rs=pst.executeQuery();
-            } catch (SQLException ex) {
-                Logger.getLogger(CBacFebEnroll.class.getName()).log(Level.SEVERE, null, ex);
-            }
-            int season1 = 0;
-            try {
-                if(rs.next())
-                    season1 = rs.getInt(1);
-            } catch (SQLException ex) {
-                Logger.getLogger(CBacFebEnroll.class.getName()).log(Level.SEVERE, null, ex);
-            }
-            
-            String y="select id from c_subject where name='"+val2+"'";
-            try {
-                pst=conn.prepareStatement(y);
-            } catch (SQLException ex) {
-                Logger.getLogger(CBacFebEnroll.class.getName()).log(Level.SEVERE, null, ex);
-            }
-            try {
-                //pst.setString(1,txtregNo.getText());
-                rs=pst.executeQuery();
-            } catch (SQLException ex) {
-                Logger.getLogger(CBacFebEnroll.class.getName()).log(Level.SEVERE, null, ex);
-            }
-            int season2=0;
-            try {
-                if(rs.next())
-                    season2 = rs.getInt(1);
-            } catch (SQLException ex) {
-                Logger.getLogger(CBacFebEnroll.class.getName()).log(Level.SEVERE, null, ex);
-            }
-            
-            
-            String Sql2="insert into c_bac_student_subject (sID,id) values("+season1+", "+season2+")";
-//                        "select a.sID,b.id \n" +
-//                        "from c_bac_student a,c_subject b \n" +
-//                        "where a.regNo = '$val1' \n" +
-//                        "and b.name = '$values[i]'";
+            String Sql1="UPDATE c_bac_student SET regNo=? where sID=(Select max(sID) as sID from c_bac_student)";
+        
             try{
-            pst=conn.prepareStatement(Sql2);
-            //pst.setString(1,txtregNo.getText());
-            //pst.setString(2,rs.getString(1));
-            
-            //rs=pst.executeQuery();
-            pst.executeUpdate();
-            
+                pst=conn.prepareStatement(Sql1);
+                pst.setString(1,txtregNo.getText());
+
+                pst.executeUpdate();
+    
             }catch(Exception e){
                 JOptionPane.showMessageDialog(null, e);
             }
+
+            String[] values={sub11.getSelectedItem().toString(),sub12.getSelectedItem().toString(),
+                            sub13.getSelectedItem().toString(),sub14.getSelectedItem().toString(),
+                            sub21.getSelectedItem().toString(),sub22.getSelectedItem().toString(),
+                            sub23.getSelectedItem().toString(),sub24.getSelectedItem().toString()};
+
+            for(int i=0; i<8; i++)
+            {
+                String val1=txtregNo.getText().toString();
+                String val2=values[i];
+
+                String x="select sID from c_bac_student where regNo='"+val1+"'";
+                try {
+                    pst=conn.prepareStatement(x);
+                } catch (SQLException ex) {
+                    Logger.getLogger(CBacFebEnroll.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                try {
+                    //pst.setString(1,txtregNo.getText());
+                    rs=pst.executeQuery();
+                } catch (SQLException ex) {
+                    Logger.getLogger(CBacFebEnroll.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                int season1 = 0;
+                try {
+                    if(rs.next())
+                        season1 = rs.getInt(1);
+                } catch (SQLException ex) {
+                    Logger.getLogger(CBacFebEnroll.class.getName()).log(Level.SEVERE, null, ex);
+                }
+
+                String y="select id from c_subject where name='"+val2+"'";
+                try {
+                    pst=conn.prepareStatement(y);
+                } catch (SQLException ex) {
+                    Logger.getLogger(CBacFebEnroll.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                try {
+                    //pst.setString(1,txtregNo.getText());
+                    rs=pst.executeQuery();
+                } catch (SQLException ex) {
+                    Logger.getLogger(CBacFebEnroll.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                int season2=0;
+                try {
+                    if(rs.next())
+                        season2 = rs.getInt(1);
+                } catch (SQLException ex) {
+                    Logger.getLogger(CBacFebEnroll.class.getName()).log(Level.SEVERE, null, ex);
+                }
+
+
+                String Sql2="insert into c_bac_student_subject (sID,id) values("+season1+", "+season2+")";
+                
+                try{
+                pst=conn.prepareStatement(Sql2);
+                //pst.setString(1,txtregNo.getText());
+                //pst.setString(2,rs.getString(1));
+
+                //rs=pst.executeQuery();
+                pst.executeUpdate();
+
+                }catch(Exception e){
+                    JOptionPane.showMessageDialog(null, e);
+                }
+            }
+            PaymentDetails pd=new PaymentDetails(values,fac);
+            pd.setVisible(true);
         }
-        PaymentDetails pd=new PaymentDetails();
-        pd.setVisible(true);
+        
+        else if(fac=="Business")
+        {
+            String Sql1="UPDATE b_bac_student SET regNo=? where sID=(Select max(sID) as sID from b_bac_student)";
+        
+            try{
+                pst=conn.prepareStatement(Sql1);
+                pst.setString(1,txtregNo.getText());
+
+                pst.executeUpdate();
+                
+            }catch(Exception e){
+                JOptionPane.showMessageDialog(null, e);
+            }
+
+            String[] values={sub11.getSelectedItem().toString(),sub12.getSelectedItem().toString(),
+                            sub13.getSelectedItem().toString(),sub14.getSelectedItem().toString(),
+                            sub21.getSelectedItem().toString(),sub22.getSelectedItem().toString(),
+                            sub23.getSelectedItem().toString(),sub24.getSelectedItem().toString()};
+
+            for(int i=0; i<8; i++)
+            {
+
+                String val1=txtregNo.getText().toString();
+                String val2=values[i];
+
+                String x="select sID from b_bac_student where regNo='"+val1+"'";
+                try {
+                    pst=conn.prepareStatement(x);
+                } catch (SQLException ex) {
+                    Logger.getLogger(CBacFebEnroll.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                try {
+                    //pst.setString(1,txtregNo.getText());
+                    rs=pst.executeQuery();
+                } catch (SQLException ex) {
+                    Logger.getLogger(CBacFebEnroll.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                int season1 = 0;
+                try {
+                    if(rs.next())
+                        season1 = rs.getInt(1);
+                } catch (SQLException ex) {
+                    Logger.getLogger(CBacFebEnroll.class.getName()).log(Level.SEVERE, null, ex);
+                }
+
+                String y="select id from b_subject where name='"+val2+"'";
+                try {
+                    pst=conn.prepareStatement(y);
+                } catch (SQLException ex) {
+                    Logger.getLogger(CBacFebEnroll.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                try {
+                    //pst.setString(1,txtregNo.getText());
+                    rs=pst.executeQuery();
+                } catch (SQLException ex) {
+                    Logger.getLogger(CBacFebEnroll.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                int season2=0;
+                try {
+                    if(rs.next())
+                        season2 = rs.getInt(1);
+                } catch (SQLException ex) {
+                    Logger.getLogger(CBacFebEnroll.class.getName()).log(Level.SEVERE, null, ex);
+                }
+
+                String Sql2="insert into b_bac_student_subject (sID,id) values("+season1+", "+season2+")";
+    
+                try{
+                pst=conn.prepareStatement(Sql2);
+                pst.executeUpdate();
+
+                }catch(Exception e){
+                    JOptionPane.showMessageDialog(null, e);
+                }
+            }
+            PaymentDetails pd=new PaymentDetails(values,fac);
+            pd.setVisible(true);
+        }
+        
+        else if(fac=="Engineering")
+        {
+            String Sql1="UPDATE e_bac_student SET regNo=? where sID=(Select max(sID) as sID from e_bac_student)";
+        
+            try{
+                pst=conn.prepareStatement(Sql1);
+                pst.setString(1,txtregNo.getText());
+
+                pst.executeUpdate();
+                
+            }catch(Exception e){
+                JOptionPane.showMessageDialog(null, e);
+            }
+
+            String[] values={sub11.getSelectedItem().toString(),sub12.getSelectedItem().toString(),
+                            sub13.getSelectedItem().toString(),sub14.getSelectedItem().toString(),
+                            sub21.getSelectedItem().toString(),sub22.getSelectedItem().toString(),
+                            sub23.getSelectedItem().toString(),sub24.getSelectedItem().toString()};
+
+
+
+            for(int i=0; i<8; i++)
+            {
+
+                String val1=txtregNo.getText().toString();
+                String val2=values[i];
+
+                String x="select sID from e_bac_student where regNo='"+val1+"'";
+                try {
+                    pst=conn.prepareStatement(x);
+                } catch (SQLException ex) {
+                    Logger.getLogger(CBacFebEnroll.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                try {
+                    //pst.setString(1,txtregNo.getText());
+                    rs=pst.executeQuery();
+                } catch (SQLException ex) {
+                    Logger.getLogger(CBacFebEnroll.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                int season1 = 0;
+                try {
+                    if(rs.next())
+                        season1 = rs.getInt(1);
+                } catch (SQLException ex) {
+                    Logger.getLogger(CBacFebEnroll.class.getName()).log(Level.SEVERE, null, ex);
+                }
+
+                String y="select id from e_subject where name='"+val2+"'";
+                try {
+                    pst=conn.prepareStatement(y);
+                } catch (SQLException ex) {
+                    Logger.getLogger(CBacFebEnroll.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                try {
+                    //pst.setString(1,txtregNo.getText());
+                    rs=pst.executeQuery();
+                } catch (SQLException ex) {
+                    Logger.getLogger(CBacFebEnroll.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                int season2=0;
+                try {
+                    if(rs.next())
+                        season2 = rs.getInt(1);
+                } catch (SQLException ex) {
+                    Logger.getLogger(CBacFebEnroll.class.getName()).log(Level.SEVERE, null, ex);
+                }
+
+
+                String Sql2="insert into e_bac_student_subject (sID,id) values("+season1+", "+season2+")";
+    
+                try{
+                pst=conn.prepareStatement(Sql2);
+                pst.executeUpdate();
+
+                }catch(Exception e){
+                    JOptionPane.showMessageDialog(null, e);
+                }
+            }
+            PaymentDetails pd=new PaymentDetails(values,fac);
+            pd.setVisible(true);
+        }
         
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -352,11 +893,19 @@ public class CBacFebEnroll extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
+        
+        
+        //CBacFebEnroll tfm = new CBacFebEnroll(fac);
+        //tfm.setvalues();
+        //String s = null;
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new CBacFebEnroll().setVisible(true);
+                CBacFebEnroll tst=new CBacFebEnroll(fac);
+                tst.setVisible(true);
             }
         });
+        
+        
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
