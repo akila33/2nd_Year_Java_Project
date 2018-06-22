@@ -130,14 +130,29 @@ public class CHome extends javax.swing.JFrame {
         jLabel5.setText("Add Teacher");
 
         jButton7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/nsbm/images/add_teacher.png"))); // NOI18N
+        jButton7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton7ActionPerformed(evt);
+            }
+        });
 
         jLabel6.setText("View Teacher");
 
         jButton10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/nsbm/images/lab.png"))); // NOI18N
+        jButton10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton10ActionPerformed(evt);
+            }
+        });
 
         jLabel8.setText("Add Lab");
 
         jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/nsbm/images/viewLab.png"))); // NOI18N
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
 
         jLabel10.setText("View Lab");
 
@@ -305,6 +320,27 @@ public class CHome extends javax.swing.JFrame {
         l.setVisible(true);
         dispose();
     }//GEN-LAST:event_jButton9ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        // TODO add your handling code here:
+        ViewLab vl=new ViewLab();
+        vl.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
+        // TODO add your handling code here:
+        AddLab al=new AddLab();
+        al.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_jButton10ActionPerformed
+
+    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+        // TODO add your handling code here:
+        ViewTeacher vt=new ViewTeacher();
+        vt.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_jButton7ActionPerformed
 
     /**
      * @param args the command line arguments
