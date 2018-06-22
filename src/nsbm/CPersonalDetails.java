@@ -57,6 +57,7 @@ public class CPersonalDetails extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         jLabel7 = new javax.swing.JLabel();
         combo_faculty = new javax.swing.JComboBox<>();
+        jButton2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -140,12 +141,19 @@ public class CPersonalDetails extends javax.swing.JFrame {
 
         combo_faculty.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Computing", "Business", "Engineering" }));
 
+        jButton2.setText("Cancel");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(50, Short.MAX_VALUE)
+                .addContainerGap(103, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -163,15 +171,6 @@ public class CPersonalDetails extends javax.swing.JFrame {
                                 .addGap(9, 9, 9)))
                         .addGap(71, 71, 71)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(combo_faculty, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addComponent(combo_type, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(combo_intake, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addGap(38, 38, 38)))
-                                .addContainerGap())
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(txtlName, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -180,21 +179,31 @@ public class CPersonalDetails extends javax.swing.JFrame {
                                     .addComponent(txttelNo, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(txtemail, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(txtfName, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(174, 174, 174))))
+                                .addGap(174, 174, 174))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addComponent(combo_faculty, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGroup(jPanel1Layout.createSequentialGroup()
+                                            .addComponent(combo_intake, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addGap(38, 38, 38)))
+                                    .addComponent(combo_type, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addContainerGap())))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(jButton2)
+                        .addGap(30, 30, 30)
                         .addComponent(jButton1)
-                        .addGap(44, 44, 44))))
+                        .addGap(46, 46, 46))))
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(121, 121, 121)
-                .addComponent(jLabel2)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel2))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGap(24, 24, 24)
                 .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 13, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtfName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(fName))
@@ -226,56 +235,41 @@ public class CPersonalDetails extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(combo_type, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel5))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 14, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(combo_intake, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel6))
-                .addGap(43, 43, 43)
-                .addComponent(jButton1)
-                .addContainerGap())
+                .addGap(26, 26, 26)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton2)
+                    .addComponent(jButton1))
+                .addGap(28, 28, 28))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 68, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 130, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txtfNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtfNameActionPerformed
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtfNameActionPerformed
-
-    private void txtlNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtlNameActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtlNameActionPerformed
-
-    private void txtdobActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtdobActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtdobActionPerformed
-
-    private void txtaddressActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtaddressActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtaddressActionPerformed
-
-    private void txttelNoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txttelNoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txttelNoActionPerformed
-
-    private void txtemailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtemailActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtemailActionPerformed
-
-    private void combo_typeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_combo_typeActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_combo_typeActionPerformed
+        CHome h=new CHome();
+        h.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
@@ -288,9 +282,9 @@ public class CPersonalDetails extends javax.swing.JFrame {
         String value1=combo_type.getSelectedItem().toString();
         String value2=combo_intake.getSelectedItem().toString();
         String fac=combo_faculty.getSelectedItem().toString();
-        
+
         //new CBacFebPreEducation(fac);
-        
+
         if(fac=="Computing")
         {
             if(value1=="Bsc")
@@ -305,7 +299,6 @@ public class CPersonalDetails extends javax.swing.JFrame {
                     pst.setString(5,txttelNo.getText());
                     pst.setString(6,txtemail.getText());
 
-
                     pst.setString(7,value2);
 
                     pst.executeUpdate();
@@ -322,173 +315,195 @@ public class CPersonalDetails extends javax.swing.JFrame {
                     }catch(Exception e){
                         JOptionPane.showMessageDialog(null, e);
                     }
-            }
+                }
 
-            else if(value1=="Msc")
-            {
-                String Sql="INSERT INTO c_mas_student (fName,lName,dob,address,telNo,email,intake) values (?,?,?,?,?,?,?)";
-                try{
-                    pst=conn.prepareStatement(Sql);
-                    pst.setString(1,txtfName.getText());
-                    pst.setString(2,txtlName.getText());
-                    pst.setString(3,txtdob.getText());
-                    pst.setString(4,txtaddress.getText());
-                    pst.setString(5,txttelNo.getText());
-                    pst.setString(6,txtemail.getText());
+                else if(value1=="Msc")
+                {
+                    String Sql="INSERT INTO c_mas_student (fName,lName,dob,address,telNo,email,intake) values (?,?,?,?,?,?,?)";
+                    try{
+                        pst=conn.prepareStatement(Sql);
+                        pst.setString(1,txtfName.getText());
+                        pst.setString(2,txtlName.getText());
+                        pst.setString(3,txtdob.getText());
+                        pst.setString(4,txtaddress.getText());
+                        pst.setString(5,txttelNo.getText());
+                        pst.setString(6,txtemail.getText());
 
+                        pst.setString(7,value2);
 
-                    pst.setString(7,value2);
+                        pst.executeUpdate();
+                        //if(rs.next()){
 
-                    pst.executeUpdate();
-                    //if(rs.next()){
-
-                        if(value2=="Feb"){
-                            CMasFebPreEducation cmfpe=new CMasFebPreEducation(fac);
-                            cmfpe.setVisible(true);
+                            if(value2=="Feb"){
+                                CMasFebPreEducation cmfpe=new CMasFebPreEducation(fac);
+                                cmfpe.setVisible(true);
+                            }
+                            else if(value2=="July"){
+                                CMasJulyPreEducation cmjpe=new CMasJulyPreEducation(fac);
+                                cmjpe.setVisible(true);
+                            }
+                        }catch(Exception e){
+                            JOptionPane.showMessageDialog(null, e);
                         }
-                        else if(value2=="July"){
-                            CMasJulyPreEducation cmjpe=new CMasJulyPreEducation(fac);
-                            cmjpe.setVisible(true);
-                        }
-                    }catch(Exception e){
-                        JOptionPane.showMessageDialog(null, e);
                     }
-            }
-        }
-        else if(fac=="Business")
-        {
-            if(value1=="Bsc")
-            {
-                String Sql="INSERT INTO b_bac_student (fName,lName,dob,address,telNo,email,intake) values (?,?,?,?,?,?,?)";
-                try{
-                    pst=conn.prepareStatement(Sql);
-                    pst.setString(1,txtfName.getText());
-                    pst.setString(2,txtlName.getText());
-                    pst.setString(3,txtdob.getText());
-                    pst.setString(4,txtaddress.getText());
-                    pst.setString(5,txttelNo.getText());
-                    pst.setString(6,txtemail.getText());
+                }
+                else if(fac=="Business")
+                {
+                    if(value1=="Bsc")
+                    {
+                        String Sql="INSERT INTO b_bac_student (fName,lName,dob,address,telNo,email,intake) values (?,?,?,?,?,?,?)";
+                        try{
+                            pst=conn.prepareStatement(Sql);
+                            pst.setString(1,txtfName.getText());
+                            pst.setString(2,txtlName.getText());
+                            pst.setString(3,txtdob.getText());
+                            pst.setString(4,txtaddress.getText());
+                            pst.setString(5,txttelNo.getText());
+                            pst.setString(6,txtemail.getText());
 
+                            pst.setString(7,value2);
 
-                    pst.setString(7,value2);
+                            pst.executeUpdate();
+                            //if(rs.next()){
+                                if(value2=="Feb"){
+                                    CBacFebPreEducation cbfpe=new CBacFebPreEducation(fac);
+                                    cbfpe.setVisible(true);
+                                }
+                                else if(value2=="July"){
+                                    CBacJulyPreEducation cbjpe=new CBacJulyPreEducation(fac);
+                                    cbjpe.setVisible(true);
+                                }
 
-                    pst.executeUpdate();
-                    //if(rs.next()){
-                        if(value2=="Feb"){
-                            CBacFebPreEducation cbfpe=new CBacFebPreEducation(fac);
-                            cbfpe.setVisible(true);
-                        }
-                        else if(value2=="July"){
-                            CBacJulyPreEducation cbjpe=new CBacJulyPreEducation(fac);
-                            cbjpe.setVisible(true);
-                        }
-
-                    }catch(Exception e){
-                        JOptionPane.showMessageDialog(null, e);
-                    }
-            }
-
-            else if(value1=="Msc")
-            {
-                String Sql="INSERT INTO b_mas_student (fName,lName,dob,address,telNo,email,intake) values (?,?,?,?,?,?,?)";
-                try{
-                    pst=conn.prepareStatement(Sql);
-                    pst.setString(1,txtfName.getText());
-                    pst.setString(2,txtlName.getText());
-                    pst.setString(3,txtdob.getText());
-                    pst.setString(4,txtaddress.getText());
-                    pst.setString(5,txttelNo.getText());
-                    pst.setString(6,txtemail.getText());
-
-
-                    pst.setString(7,value2);
-
-                    pst.executeUpdate();
-                    //if(rs.next()){
-
-                        if(value2=="Feb"){
-                            CMasFebPreEducation cmfpe=new CMasFebPreEducation(fac);
-                            cmfpe.setVisible(true);
-                        }
-                        else if(value2=="July"){
-                            CMasJulyPreEducation cmjpe=new CMasJulyPreEducation(fac);
-                            cmjpe.setVisible(true);
-                        }
-                    }catch(Exception e){
-                        JOptionPane.showMessageDialog(null, e);
-                    }
-            }
-        }
-        else if(fac=="Engineering")
-        {
-            if(value1=="Bsc")
-            {
-                String Sql="INSERT INTO e_bac_student (fName,lName,dob,address,telNo,email,intake) values (?,?,?,?,?,?,?)";
-                try{
-                    pst=conn.prepareStatement(Sql);
-                    pst.setString(1,txtfName.getText());
-                    pst.setString(2,txtlName.getText());
-                    pst.setString(3,txtdob.getText());
-                    pst.setString(4,txtaddress.getText());
-                    pst.setString(5,txttelNo.getText());
-                    pst.setString(6,txtemail.getText());
-
-
-                    pst.setString(7,value2);
-
-                    pst.executeUpdate();
-                    //if(rs.next()){
-                        if(value2=="Feb"){
-                            CBacFebPreEducation cbfpe=new CBacFebPreEducation(fac);
-                            cbfpe.setVisible(true);
-                        }
-                        else if(value2=="July"){
-                            CBacJulyPreEducation cbjpe=new CBacJulyPreEducation(fac);
-                            cbjpe.setVisible(true);
+                            }catch(Exception e){
+                                JOptionPane.showMessageDialog(null, e);
+                            }
                         }
 
-                    }catch(Exception e){
-                        JOptionPane.showMessageDialog(null, e);
-                    }
-            }
+                        else if(value1=="Msc")
+                        {
+                            String Sql="INSERT INTO b_mas_student (fName,lName,dob,address,telNo,email,intake) values (?,?,?,?,?,?,?)";
+                            try{
+                                pst=conn.prepareStatement(Sql);
+                                pst.setString(1,txtfName.getText());
+                                pst.setString(2,txtlName.getText());
+                                pst.setString(3,txtdob.getText());
+                                pst.setString(4,txtaddress.getText());
+                                pst.setString(5,txttelNo.getText());
+                                pst.setString(6,txtemail.getText());
 
-            else if(value1=="Msc")
-            {
-                String Sql="INSERT INTO e_mas_student (fName,lName,dob,address,telNo,email,intake) values (?,?,?,?,?,?,?)";
-                try{
-                    pst=conn.prepareStatement(Sql);
-                    pst.setString(1,txtfName.getText());
-                    pst.setString(2,txtlName.getText());
-                    pst.setString(3,txtdob.getText());
-                    pst.setString(4,txtaddress.getText());
-                    pst.setString(5,txttelNo.getText());
-                    pst.setString(6,txtemail.getText());
+                                pst.setString(7,value2);
 
+                                pst.executeUpdate();
+                                //if(rs.next()){
 
-                    pst.setString(7,value2);
-
-                    pst.executeUpdate();
-                    //if(rs.next()){
-
-                        if(value2=="Feb"){
-                            CMasFebPreEducation cmfpe=new CMasFebPreEducation(fac);
-                            cmfpe.setVisible(true);
+                                    if(value2=="Feb"){
+                                        CMasFebPreEducation cmfpe=new CMasFebPreEducation(fac);
+                                        cmfpe.setVisible(true);
+                                    }
+                                    else if(value2=="July"){
+                                        CMasJulyPreEducation cmjpe=new CMasJulyPreEducation(fac);
+                                        cmjpe.setVisible(true);
+                                    }
+                                }catch(Exception e){
+                                    JOptionPane.showMessageDialog(null, e);
+                                }
+                            }
                         }
-                        else if(value2=="July"){
-                            CMasJulyPreEducation cmjpe=new CMasJulyPreEducation(fac);
-                            cmjpe.setVisible(true);
-                        }
-                    }catch(Exception e){
-                        JOptionPane.showMessageDialog(null, e);
-                    }
-            }
-        }
-        
+                        else if(fac=="Engineering")
+                        {
+                            if(value1=="Bsc")
+                            {
+                                String Sql="INSERT INTO e_bac_student (fName,lName,dob,address,telNo,email,intake) values (?,?,?,?,?,?,?)";
+                                try{
+                                    pst=conn.prepareStatement(Sql);
+                                    pst.setString(1,txtfName.getText());
+                                    pst.setString(2,txtlName.getText());
+                                    pst.setString(3,txtdob.getText());
+                                    pst.setString(4,txtaddress.getText());
+                                    pst.setString(5,txttelNo.getText());
+                                    pst.setString(6,txtemail.getText());
+
+                                    pst.setString(7,value2);
+
+                                    pst.executeUpdate();
+                                    //if(rs.next()){
+                                        if(value2=="Feb"){
+                                            CBacFebPreEducation cbfpe=new CBacFebPreEducation(fac);
+                                            cbfpe.setVisible(true);
+                                        }
+                                        else if(value2=="July"){
+                                            CBacJulyPreEducation cbjpe=new CBacJulyPreEducation(fac);
+                                            cbjpe.setVisible(true);
+                                        }
+
+                                    }catch(Exception e){
+                                        JOptionPane.showMessageDialog(null, e);
+                                    }
+                                }
+
+                                else if(value1=="Msc")
+                                {
+                                    String Sql="INSERT INTO e_mas_student (fName,lName,dob,address,telNo,email,intake) values (?,?,?,?,?,?,?)";
+                                    try{
+                                        pst=conn.prepareStatement(Sql);
+                                        pst.setString(1,txtfName.getText());
+                                        pst.setString(2,txtlName.getText());
+                                        pst.setString(3,txtdob.getText());
+                                        pst.setString(4,txtaddress.getText());
+                                        pst.setString(5,txttelNo.getText());
+                                        pst.setString(6,txtemail.getText());
+
+                                        pst.setString(7,value2);
+
+                                        pst.executeUpdate();
+                                        //if(rs.next()){
+
+                                            if(value2=="Feb"){
+                                                CMasFebPreEducation cmfpe=new CMasFebPreEducation(fac);
+                                                cmfpe.setVisible(true);
+                                            }
+                                            else if(value2=="July"){
+                                                CMasJulyPreEducation cmjpe=new CMasJulyPreEducation(fac);
+                                                cmjpe.setVisible(true);
+                                            }
+                                        }catch(Exception e){
+                                            JOptionPane.showMessageDialog(null, e);
+                                        }
+                                    }
+                                }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void combo_intakeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_combo_intakeActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_combo_intakeActionPerformed
+
+    private void txtemailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtemailActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtemailActionPerformed
+
+    private void txttelNoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txttelNoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txttelNoActionPerformed
+
+    private void txtaddressActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtaddressActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtaddressActionPerformed
+
+    private void txtdobActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtdobActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtdobActionPerformed
+
+    private void txtlNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtlNameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtlNameActionPerformed
+
+    private void txtfNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtfNameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtfNameActionPerformed
+
+    private void combo_typeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_combo_typeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_combo_typeActionPerformed
 
 //    public String getVariable()
 //    {
@@ -538,6 +553,7 @@ public class CPersonalDetails extends javax.swing.JFrame {
     private javax.swing.JLabel dob;
     private javax.swing.JLabel fName;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
