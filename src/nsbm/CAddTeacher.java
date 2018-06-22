@@ -54,36 +54,63 @@ public class CAddTeacher extends javax.swing.JFrame {
         txttitle = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         jLabel7 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        txtsubjects = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
+        txtroom = new javax.swing.JTextField();
+        jLabel9 = new javax.swing.JLabel();
+        txtlabID = new javax.swing.JTextField();
+        jLabel10 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jPanel1.setLayout(null);
+
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel1.setText("Add Teacher");
+        jPanel1.add(jLabel1);
+        jLabel1.setBounds(220, 30, 113, 22);
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 51));
         jLabel2.setText("Teacher ID:");
+        jPanel1.add(jLabel2);
+        jLabel2.setBounds(80, 159, 100, 17);
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 51));
-        jLabel3.setText("Type");
+        jLabel3.setText("Type:");
+        jPanel1.add(jLabel3);
+        jLabel3.setBounds(80, 93, 70, 17);
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 51));
-        jLabel4.setText("Name");
+        jLabel4.setText("Name:");
+        jPanel1.add(jLabel4);
+        jLabel4.setBounds(80, 206, 70, 17);
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 51));
-        jLabel5.setText("Qualifications");
+        jLabel5.setText("Qualifications:");
+        jPanel1.add(jLabel5);
+        jLabel5.setBounds(80, 294, 110, 17);
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 51));
-        jLabel6.setText("Title");
+        jLabel6.setText("Title:");
+        jPanel1.add(jLabel6);
+        jLabel6.setBounds(80, 254, 60, 17);
 
         combo_tType.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Lecturer", "Instructor" }));
+        jPanel1.add(combo_tType);
+        combo_tType.setBounds(222, 90, 73, 20);
+        jPanel1.add(txttecID);
+        txttecID.setBounds(222, 156, 115, 20);
+        jPanel1.add(txtname);
+        txtname.setBounds(222, 203, 115, 20);
+        jPanel1.add(txtqualification);
+        txtqualification.setBounds(222, 291, 115, 20);
+        jPanel1.add(txttitle);
+        txttitle.setBounds(222, 251, 115, 20);
 
         jButton1.setText("Add");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -91,109 +118,42 @@ public class CAddTeacher extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
+        jPanel1.add(jButton1);
+        jButton1.setBounds(360, 520, 63, 23);
 
-        jLabel7.setText("Subjects");
+        jLabel7.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(255, 255, 0));
+        jLabel7.setText("Subjects:");
+        jPanel1.add(jLabel7);
+        jLabel7.setBounds(80, 345, 100, 17);
 
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        txtsubjects.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                txtsubjectsActionPerformed(evt);
             }
         });
+        jPanel1.add(txtsubjects);
+        txtsubjects.setBounds(222, 345, 115, 20);
 
-        jLabel8.setText("Room");
+        jLabel8.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(255, 255, 0));
+        jLabel8.setText("Room:");
+        jPanel1.add(jLabel8);
+        jLabel8.setBounds(80, 393, 80, 17);
+        jPanel1.add(txtroom);
+        txtroom.setBounds(222, 393, 115, 20);
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(240, 240, 240)
-                        .addComponent(jLabel1))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(80, 80, 80)
-                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(72, 72, 72)
-                        .addComponent(combo_tType, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(80, 80, 80)
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(42, 42, 42)
-                        .addComponent(txttecID, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(80, 80, 80)
-                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(72, 72, 72)
-                        .addComponent(txtname, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(80, 80, 80)
-                        .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(82, 82, 82)
-                        .addComponent(txttitle, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(80, 80, 80)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel7)
-                            .addComponent(jLabel8))
-                        .addGap(32, 32, 32)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(txtqualification, javax.swing.GroupLayout.DEFAULT_SIZE, 115, Short.MAX_VALUE)
-                            .addComponent(jTextField1)
-                            .addComponent(jTextField2))))
-                .addGap(213, 213, 213))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(175, 175, 175))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(30, 30, 30)
-                .addComponent(jLabel1)
-                .addGap(38, 38, 38)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(3, 3, 3)
-                        .addComponent(jLabel3))
-                    .addComponent(combo_tType, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(46, 46, 46)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(3, 3, 3)
-                        .addComponent(jLabel2))
-                    .addComponent(txttecID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(27, 27, 27)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(3, 3, 3)
-                        .addComponent(jLabel4))
-                    .addComponent(txtname, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(28, 28, 28)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(3, 3, 3)
-                        .addComponent(jLabel6))
-                    .addComponent(txttitle, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(20, 20, 20)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(3, 3, 3)
-                        .addComponent(jLabel5))
-                    .addComponent(txtqualification, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(34, 34, 34)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel7)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(28, 28, 28)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel8)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)
-                .addComponent(jButton1)
-                .addGap(126, 126, 126))
-        );
+        jLabel9.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(255, 255, 0));
+        jLabel9.setText("Lab ID:");
+        jPanel1.add(jLabel9);
+        jLabel9.setBounds(80, 436, 70, 17);
+        jPanel1.add(txtlabID);
+        txtlabID.setBounds(222, 436, 115, 20);
+
+        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/nsbm/images/background11.jpg"))); // NOI18N
+        jPanel1.add(jLabel10);
+        jLabel10.setBounds(0, 0, 570, 610);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -217,15 +177,37 @@ public class CAddTeacher extends javax.swing.JFrame {
         } catch (SQLException ex) {
             Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
         }
-        String Sql="INSERT INTO c_teacher (tecID,name,title,qualification,tType) values (?,?,?,?,?)";
+        String Sql="INSERT INTO c_teacher (tecID,name,title,qualification,tType,labID) values (?,?,?,?,?,?)";
         try{
-            pst=conn.prepareStatement(Sql);
-            pst.setString(1,txttecID.getText());
-            pst.setString(2,txtname.getText());
-            pst.setString(3,txttitle.getText());
-            pst.setString(4,txtqualification.getText());
-            
             String value=combo_tType.getSelectedItem().toString();
+            
+            if(value=="Lecturer")
+            {
+                txtlabID.setEditable(false);
+                
+                pst=conn.prepareStatement(Sql);
+                pst.setString(1,txttecID.getText());
+                pst.setString(2,txtname.getText());
+                pst.setString(3,txttitle.getText());
+                pst.setString(4,txtqualification.getText());
+                pst.setString(3,txtsubjects.getText());
+                pst.setString(3,txtroom.getText());
+            }
+            else
+            {
+                pst=conn.prepareStatement(Sql);
+                pst.setString(1,txttecID.getText());
+                pst.setString(2,txtname.getText());
+                pst.setString(3,txttitle.getText());
+                pst.setString(4,txtqualification.getText());
+                pst.setString(3,txtsubjects.getText());
+                pst.setString(3,txtroom.getText());
+                pst.setString(3,txtlabID.getText());
+            }
+                
+            
+            
+            
             pst.setString(5,value);
             
             pst.executeUpdate();
@@ -241,9 +223,9 @@ public class CAddTeacher extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void txtsubjectsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtsubjectsActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_txtsubjectsActionPerformed
 
     /**
      * @param args the command line arguments
@@ -284,6 +266,7 @@ public class CAddTeacher extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> combo_tType;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -291,11 +274,13 @@ public class CAddTeacher extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField txtlabID;
     private javax.swing.JTextField txtname;
     private javax.swing.JTextField txtqualification;
+    private javax.swing.JTextField txtroom;
+    private javax.swing.JTextField txtsubjects;
     private javax.swing.JTextField txttecID;
     private javax.swing.JTextField txttitle;
     // End of variables declaration//GEN-END:variables
