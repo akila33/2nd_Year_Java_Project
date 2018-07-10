@@ -59,32 +59,42 @@ public class CAddSubject extends javax.swing.JFrame {
         combo_sem = new javax.swing.JComboBox<>();
         jLabel9 = new javax.swing.JLabel();
         combo_category = new javax.swing.JComboBox<>();
+        jButton2 = new javax.swing.JButton();
         jLabel10 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setLayout(null);
 
+        combo_cType.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         combo_cType.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Bsc", "Msc" }));
         jPanel1.add(combo_cType);
-        combo_cType.setBounds(311, 135, 43, 20);
+        combo_cType.setBounds(318, 171, 51, 23);
 
+        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel1.setText("Course Type:");
         jPanel1.add(jLabel1);
-        jLabel1.setBounds(77, 138, 65, 14);
+        jLabel1.setBounds(77, 174, 83, 17);
 
-        jLabel2.setText("Subject Name:");
+        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel2.setText("Subject Name");
         jPanel1.add(jLabel2);
-        jLabel2.setBounds(77, 278, 70, 14);
+        jLabel2.setBounds(77, 373, 86, 17);
 
-        jLabel3.setText("Subject ID:");
+        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel3.setText("Subject ID");
         jPanel1.add(jLabel3);
-        jLabel3.setBounds(77, 247, 54, 14);
-        jPanel1.add(txtsubID);
-        txtsubID.setBounds(311, 244, 96, 20);
-        jPanel1.add(txtname);
-        txtname.setBounds(311, 275, 96, 20);
+        jLabel3.setBounds(77, 310, 65, 17);
 
+        txtsubID.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jPanel1.add(txtsubID);
+        txtsubID.setBounds(292, 307, 132, 23);
+
+        txtname.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jPanel1.add(txtname);
+        txtname.setBounds(292, 370, 132, 23);
+
+        jButton1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jButton1.setText("Add");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -92,56 +102,76 @@ public class CAddSubject extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jButton1);
-        jButton1.setBounds(488, 381, 51, 23);
+        jButton1.setBounds(450, 548, 57, 25);
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel4.setText("Add Subject");
         jPanel1.add(jLabel4);
-        jLabel4.setBounds(251, 19, 108, 22);
+        jLabel4.setBounds(235, 22, 108, 22);
 
+        jLabel5.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel5.setText("No of credits");
         jPanel1.add(jLabel5);
-        jLabel5.setBounds(77, 309, 61, 14);
+        jLabel5.setBounds(77, 431, 77, 17);
 
+        jLabel6.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel6.setText("Price");
         jPanel1.add(jLabel6);
-        jLabel6.setBounds(77, 340, 23, 14);
+        jLabel6.setBounds(77, 495, 29, 17);
 
+        txtcredits.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         txtcredits.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtcreditsActionPerformed(evt);
             }
         });
         jPanel1.add(txtcredits);
-        txtcredits.setBounds(311, 306, 96, 20);
+        txtcredits.setBounds(292, 428, 132, 23);
+
+        txtprice.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jPanel1.add(txtprice);
-        txtprice.setBounds(311, 337, 96, 20);
+        txtprice.setBounds(292, 492, 132, 23);
 
-        jLabel7.setText("Faculty");
+        jLabel7.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel7.setText("Faculty:");
         jPanel1.add(jLabel7);
-        jLabel7.setBounds(77, 62, 35, 14);
+        jLabel7.setBounds(77, 83, 49, 17);
 
+        combo_faculty.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         combo_faculty.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Computing", "Business", "Engineering" }));
         jPanel1.add(combo_faculty);
-        combo_faculty.setBounds(311, 59, 81, 20);
+        combo_faculty.setBounds(318, 80, 99, 23);
 
-        jLabel8.setText("Semester");
+        jLabel8.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel8.setText("Semester:");
         jPanel1.add(jLabel8);
-        jLabel8.setBounds(77, 192, 45, 14);
+        jLabel8.setBounds(77, 246, 62, 17);
 
+        combo_sem.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         combo_sem.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Sem1", "Sem2" }));
+        combo_sem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                combo_semActionPerformed(evt);
+            }
+        });
         jPanel1.add(combo_sem);
-        combo_sem.setBounds(311, 189, 51, 20);
+        combo_sem.setBounds(178, 243, 63, 23);
 
-        jLabel9.setText("Category");
+        jLabel9.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel9.setText("Category:");
         jPanel1.add(jLabel9);
-        jLabel9.setBounds(485, 110, 45, 14);
+        jLabel9.setBounds(292, 246, 62, 17);
 
+        combo_category.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         combo_category.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2" }));
         jPanel1.add(combo_category);
-        combo_category.setBounds(508, 135, 31, 20);
+        combo_category.setBounds(388, 243, 36, 23);
 
-        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/nsbm/images/background1.jpg"))); // NOI18N
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/nsbm/images/back.png"))); // NOI18N
+        jPanel1.add(jButton2);
+        jButton2.setBounds(10, 11, 57, 33);
+
+        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/nsbm/images/wallpaper4.jpg"))); // NOI18N
         jPanel1.add(jLabel10);
         jLabel10.setBounds(0, 0, 580, 610);
 
@@ -149,11 +179,11 @@ public class CAddSubject extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 576, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 610, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -193,7 +223,7 @@ public class CAddSubject extends javax.swing.JFrame {
                 pst.executeUpdate();
                 if(true){
                     JOptionPane.showMessageDialog(null, "Record added successfully");
-                    System.exit(0);
+                    //System.exit(0);
                 }
                 else{
                     JOptionPane.showMessageDialog(null, "Invalid username or password","Access Denied", JOptionPane.ERROR_MESSAGE);
@@ -226,7 +256,7 @@ public class CAddSubject extends javax.swing.JFrame {
                 pst.executeUpdate();
                 if(true){
                     JOptionPane.showMessageDialog(null, "Record added successfully");
-                    System.exit(0);
+                    //System.exit(0);
                 }
                 else{
                     JOptionPane.showMessageDialog(null, "Invalid username or password","Access Denied", JOptionPane.ERROR_MESSAGE);
@@ -259,7 +289,7 @@ public class CAddSubject extends javax.swing.JFrame {
                 pst.executeUpdate();
                 if(true){
                     JOptionPane.showMessageDialog(null, "Record added successfully");
-                    System.exit(0);
+                    //System.exit(0);
                 }
                 else{
                     JOptionPane.showMessageDialog(null, "Invalid username or password","Access Denied", JOptionPane.ERROR_MESSAGE);
@@ -269,12 +299,20 @@ public class CAddSubject extends javax.swing.JFrame {
             }
         }
         
+        CHome h=new CHome();
+        h.setVisible(true);
+        dispose();
+        
         
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void txtcreditsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtcreditsActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtcreditsActionPerformed
+
+    private void combo_semActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_combo_semActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_combo_semActionPerformed
 
     /**
      * @param args the command line arguments
@@ -317,6 +355,7 @@ public class CAddSubject extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> combo_faculty;
     private javax.swing.JComboBox<String> combo_sem;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;

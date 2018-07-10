@@ -23,7 +23,7 @@ public class CBacJulyEnroll extends javax.swing.JFrame {
     PreparedStatement pst=null;
     ResultSet rs=null;
     
-    String fac;
+    static String fac;
     
     public CBacJulyEnroll() {
         initComponents();
@@ -39,20 +39,21 @@ public class CBacJulyEnroll extends javax.swing.JFrame {
     }
     
     //Allocate subjects for selection
-    public void setvalues()
+    private void setvalues()
     {
         if(fac=="Computing")
         {
             //Semester 2 subject allocation
             try
             {
-                String sql="SELECT name FROM c_subject WHERE credits=3 AND cType='Bsc' AND category=1 AND semester='Sem2'";
+                conn=MySqlConnect.ConnectDB();
+                String sql="SELECT * FROM c_subject WHERE credits=3 AND cType='Bsc' AND category=1 AND semester='Sem2'";
                 pst=conn.prepareStatement(sql);
                 rs=pst.executeQuery();
                 sub21.removeAllItems();
                 while(rs.next())
                 {
-                    sub21.addItem(rs.getString(sql));
+                    sub21.addItem(rs.getString("name"));
                 }
             }
             catch(Exception e)
@@ -62,13 +63,13 @@ public class CBacJulyEnroll extends javax.swing.JFrame {
 
             try
             {
-                String sql="SELECT name FROM c_subject WHERE credits=3 AND cType='Bsc' AND category=2 AND semester='Sem2'";
+                String sql="SELECT * FROM c_subject WHERE credits=3 AND cType='Bsc' AND category=2 AND semester='Sem2'";
                 pst=conn.prepareStatement(sql);
                 rs=pst.executeQuery();
                 sub22.removeAllItems();
                 while(rs.next())
                 {
-                    sub22.addItem(rs.getString(sql));
+                    sub22.addItem(rs.getString("name"));
                 }
             }
             catch(Exception e)
@@ -78,13 +79,13 @@ public class CBacJulyEnroll extends javax.swing.JFrame {
 
             try
             {
-                String sql="SELECT name FROM c_subject WHERE credits=2 AND cType='Bsc' AND category=1 AND semester='Sem2'";
+                String sql="SELECT * FROM c_subject WHERE credits=2 AND cType='Bsc' AND category=1 AND semester='Sem2'";
                 pst=conn.prepareStatement(sql);
                 rs=pst.executeQuery();
                 sub23.removeAllItems();
                 while(rs.next())
                 {
-                    sub23.addItem(rs.getString(sql));
+                    sub23.addItem(rs.getString("name"));
                 }
             }
             catch(Exception e)
@@ -94,13 +95,13 @@ public class CBacJulyEnroll extends javax.swing.JFrame {
 
             try
             {
-                String sql="SELECT name FROM c_subject WHERE credits=2 AND cType='Bsc' AND category=2 AND semester='Sem2'";
+                String sql="SELECT * FROM c_subject WHERE credits=2 AND cType='Bsc' AND category=2 AND semester='Sem2'";
                 pst=conn.prepareStatement(sql);
                 rs=pst.executeQuery();
                 sub24.removeAllItems();
                 while(rs.next())
                 {
-                    sub24.addItem(rs.getString(sql));
+                    sub24.addItem(rs.getString("name"));
                 }
             }
             catch(Exception e)
@@ -114,13 +115,14 @@ public class CBacJulyEnroll extends javax.swing.JFrame {
             //Semester 2 subject allocation
             try
             {
-                String sql="SELECT name FROM b_subject WHERE credits=3 AND cType='Bsc' AND category=1 AND semester='Sem2'";
+                conn=MySqlConnect.ConnectDB();
+                String sql="SELECT * FROM b_subject WHERE credits=3 AND cType='Bsc' AND category=1 AND semester='Sem2'";
                 pst=conn.prepareStatement(sql);
                 rs=pst.executeQuery();
                 sub21.removeAllItems();
                 while(rs.next())
                 {
-                    sub21.addItem(rs.getString(sql));
+                    sub21.addItem(rs.getString("name"));
                 }
             }
             catch(Exception e)
@@ -130,13 +132,13 @@ public class CBacJulyEnroll extends javax.swing.JFrame {
 
             try
             {
-                String sql="SELECT name FROM b_subject WHERE credits=3 AND cType='Bsc' AND category=2 AND semester='Sem2'";
+                String sql="SELECT * FROM b_subject WHERE credits=3 AND cType='Bsc' AND category=2 AND semester='Sem2'";
                 pst=conn.prepareStatement(sql);
                 rs=pst.executeQuery();
                 sub22.removeAllItems();
                 while(rs.next())
                 {
-                    sub22.addItem(rs.getString(sql));
+                    sub22.addItem(rs.getString("name"));
                 }
             }
             catch(Exception e)
@@ -146,13 +148,13 @@ public class CBacJulyEnroll extends javax.swing.JFrame {
 
             try
             {
-                String sql="SELECT name FROM b_subject WHERE credits=2 AND cType='Bsc' AND category=1 AND semester='Sem2'";
+                String sql="SELECT * FROM b_subject WHERE credits=2 AND cType='Bsc' AND category=1 AND semester='Sem2'";
                 pst=conn.prepareStatement(sql);
                 rs=pst.executeQuery();
                 sub23.removeAllItems();
                 while(rs.next())
                 {
-                    sub23.addItem(rs.getString(sql));
+                    sub23.addItem(rs.getString("name"));
                 }
             }
             catch(Exception e)
@@ -162,13 +164,13 @@ public class CBacJulyEnroll extends javax.swing.JFrame {
 
             try
             {
-                String sql="SELECT name FROM b_subject WHERE credits=2 AND cType='Bsc' AND category=2 AND semester='Sem2'";
+                String sql="SELECT * FROM b_subject WHERE credits=2 AND cType='Bsc' AND category=2 AND semester='Sem2'";
                 pst=conn.prepareStatement(sql);
                 rs=pst.executeQuery();
                 sub24.removeAllItems();
                 while(rs.next())
                 {
-                    sub24.addItem(rs.getString(sql));
+                    sub24.addItem(rs.getString("name"));
                 }
             }
             catch(Exception e)
@@ -183,13 +185,14 @@ public class CBacJulyEnroll extends javax.swing.JFrame {
             //Semester 2 subject allocation
             try
             {
-                String sql="SELECT name FROM e_subject WHERE credits=3 AND cType='Bsc' AND category=1 AND semester='Sem2'";
+                conn=MySqlConnect.ConnectDB();
+                String sql="SELECT * FROM e_subject WHERE credits=3 AND cType='Bsc' AND category=1 AND semester='Sem2'";
                 pst=conn.prepareStatement(sql);
                 rs=pst.executeQuery();
                 sub21.removeAllItems();
                 while(rs.next())
                 {
-                    sub21.addItem(rs.getString(sql));
+                    sub21.addItem(rs.getString("name"));
                 }
             }
             catch(Exception e)
@@ -199,13 +202,13 @@ public class CBacJulyEnroll extends javax.swing.JFrame {
 
             try
             {
-                String sql="SELECT name FROM e_subject WHERE credits=3 AND cType='Bsc' AND category=2 AND semester='Sem2'";
+                String sql="SELECT * FROM e_subject WHERE credits=3 AND cType='Bsc' AND category=2 AND semester='Sem2'";
                 pst=conn.prepareStatement(sql);
                 rs=pst.executeQuery();
                 sub22.removeAllItems();
                 while(rs.next())
                 {
-                    sub22.addItem(rs.getString(sql));
+                    sub22.addItem(rs.getString("name"));
                 }
             }
             catch(Exception e)
@@ -215,13 +218,13 @@ public class CBacJulyEnroll extends javax.swing.JFrame {
 
             try
             {
-                String sql="SELECT name FROM e_subject WHERE credits=2 AND cType='Bsc' AND category=1 AND semester='Sem2'";
+                String sql="SELECT * FROM e_subject WHERE credits=2 AND cType='Bsc' AND category=1 AND semester='Sem2'";
                 pst=conn.prepareStatement(sql);
                 rs=pst.executeQuery();
                 sub23.removeAllItems();
                 while(rs.next())
                 {
-                    sub23.addItem(rs.getString(sql));
+                    sub23.addItem(rs.getString("name"));
                 }
             }
             catch(Exception e)
@@ -231,13 +234,13 @@ public class CBacJulyEnroll extends javax.swing.JFrame {
 
             try
             {
-                String sql="SELECT name FROM e_subject WHERE credits=2 AND cType='Bsc' AND category=2 AND semester='Sem2'";
+                String sql="SELECT * FROM e_subject WHERE credits=2 AND cType='Bsc' AND category=2 AND semester='Sem2'";
                 pst=conn.prepareStatement(sql);
                 rs=pst.executeQuery();
                 sub24.removeAllItems();
                 while(rs.next())
                 {
-                    sub24.addItem(rs.getString(sql));
+                    sub24.addItem(rs.getString("name"));
                 }
             }
             catch(Exception e)
@@ -276,22 +279,28 @@ public class CBacJulyEnroll extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel1.setText("Enroll Details");
         jPanel1.add(jLabel1);
-        jLabel1.setBounds(187, 30, 119, 22);
+        jLabel1.setBounds(249, 24, 119, 22);
 
+        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel2.setText("Registration number:");
         jPanel1.add(jLabel2);
-        jLabel2.setBounds(83, 94, 101, 14);
+        jLabel2.setBounds(83, 94, 129, 17);
 
+        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel3.setText("Basket subjects:");
         jPanel1.add(jLabel3);
-        jLabel3.setBounds(83, 135, 79, 14);
-        jPanel1.add(txtregNo);
-        txtregNo.setBounds(262, 91, 110, 20);
+        jLabel3.setBounds(83, 138, 100, 17);
 
+        txtregNo.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jPanel1.add(txtregNo);
+        txtregNo.setBounds(290, 91, 150, 23);
+
+        jLabel4.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel4.setText("Sem 2:");
         jPanel1.add(jLabel4);
-        jLabel4.setBounds(83, 175, 33, 14);
+        jLabel4.setBounds(83, 181, 44, 17);
 
+        jButton1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jButton1.setText("Submit");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -299,25 +308,31 @@ public class CBacJulyEnroll extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jButton1);
-        jButton1.setBounds(363, 326, 65, 23);
+        jButton1.setBounds(390, 495, 75, 25);
 
-        sub21.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Media", "Graphics" }));
+        sub21.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                sub21ActionPerformed(evt);
+            }
+        });
         jPanel1.add(sub21);
-        sub21.setBounds(97, 207, 66, 20);
+        sub21.setBounds(83, 216, 28, 20);
 
-        sub22.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Java", "C#" }));
         jPanel1.add(sub22);
-        sub22.setBounds(215, 207, 48, 20);
+        sub22.setBounds(249, 216, 28, 20);
 
-        sub23.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Discrete", "Logarithms" }));
+        sub23.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                sub23ActionPerformed(evt);
+            }
+        });
         jPanel1.add(sub23);
-        sub23.setBounds(97, 272, 77, 20);
+        sub23.setBounds(83, 314, 28, 20);
 
-        sub24.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "C", "C++" }));
         jPanel1.add(sub24);
-        sub24.setBounds(215, 272, 48, 20);
+        sub24.setBounds(249, 314, 28, 20);
 
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/nsbm/images/background1.jpg"))); // NOI18N
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/nsbm/images/wallpaper4.jpg"))); // NOI18N
         jPanel1.add(jLabel5);
         jLabel5.setBounds(0, 0, 580, 610);
 
@@ -325,11 +340,11 @@ public class CBacJulyEnroll extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 576, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 610, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -368,7 +383,7 @@ public class CBacJulyEnroll extends javax.swing.JFrame {
                 String val1=txtregNo.getText().toString();
                 String val2=values[i];
 
-                String x="select sID from c_bac_student where regNo='"+val1+"'";
+                String x="SELECT sID from c_bac_student where regNo='"+val1+"'";
                 try {
                     pst=conn.prepareStatement(x);
                 } catch (SQLException ex) {
@@ -575,7 +590,16 @@ public class CBacJulyEnroll extends javax.swing.JFrame {
             pd.setVisible(true);
         }
         
+        
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void sub23ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sub23ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_sub23ActionPerformed
+
+    private void sub21ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sub21ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_sub21ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -607,7 +631,8 @@ public class CBacJulyEnroll extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new CBacJulyEnroll().setVisible(true);
+                CBacJulyEnroll tst=new CBacJulyEnroll(fac);
+                tst.setVisible(true);
             }
         });
     }

@@ -63,33 +63,44 @@ public class CMasJulyPreEducation extends javax.swing.JFrame {
 
         jPanel1.setLayout(null);
 
-        jLabel12.setText("Qualification type:");
+        jLabel12.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel12.setText("Qualification type");
         jPanel1.add(jLabel12);
-        jLabel12.setBounds(93, 101, 88, 14);
+        jLabel12.setBounds(93, 104, 104, 17);
+
+        txtinstitute.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jPanel1.add(txtinstitute);
-        txtinstitute.setBounds(244, 140, 119, 20);
+        txtinstitute.setBounds(265, 171, 156, 23);
+
+        txtyearComp.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jPanel1.add(txtyearComp);
-        txtyearComp.setBounds(244, 193, 119, 20);
+        txtyearComp.setBounds(265, 238, 156, 23);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel1.setText("Previous Education");
         jPanel1.add(jLabel1);
-        jLabel1.setBounds(198, 42, 173, 22);
+        jLabel1.setBounds(205, 33, 173, 22);
 
+        jLabel13.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel13.setText("Institute");
         jPanel1.add(jLabel13);
-        jLabel13.setBounds(93, 143, 41, 14);
+        jLabel13.setBounds(93, 174, 50, 17);
 
-        jLabel14.setText("Year of completion:");
+        jLabel14.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel14.setText("Year of completion");
         jPanel1.add(jLabel14);
-        jLabel14.setBounds(93, 199, 93, 14);
+        jLabel14.setBounds(93, 241, 114, 17);
 
+        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel2.setText("GPA");
         jPanel1.add(jLabel2);
-        jLabel2.setBounds(93, 242, 20, 14);
-        jPanel1.add(txtgpa);
-        txtgpa.setBounds(244, 239, 119, 20);
+        jLabel2.setBounds(93, 309, 25, 17);
 
+        txtgpa.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jPanel1.add(txtgpa);
+        txtgpa.setBounds(265, 306, 156, 23);
+
+        jButton1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jButton1.setText("Next");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -97,11 +108,18 @@ public class CMasJulyPreEducation extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jButton1);
-        jButton1.setBounds(369, 381, 55, 23);
-        jPanel1.add(txtqType);
-        txtqType.setBounds(244, 98, 119, 20);
+        jButton1.setBounds(391, 446, 76, 25);
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/nsbm/images/background1.jpg"))); // NOI18N
+        txtqType.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        txtqType.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtqTypeActionPerformed(evt);
+            }
+        });
+        jPanel1.add(txtqType);
+        txtqType.setBounds(265, 101, 156, 23);
+
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/nsbm/images/wallpaper4.jpg"))); // NOI18N
         jPanel1.add(jLabel3);
         jLabel3.setBounds(0, 0, 580, 610);
 
@@ -109,15 +127,11 @@ public class CMasJulyPreEducation extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 576, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 610, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -201,6 +215,10 @@ public class CMasJulyPreEducation extends javax.swing.JFrame {
             }
         }
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void txtqTypeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtqTypeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtqTypeActionPerformed
 
     /**
      * @param args the command line arguments

@@ -49,8 +49,8 @@ public class CMasFebPreEducation extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
-        txtqType = new javax.swing.JTextField();
         jLabel13 = new javax.swing.JLabel();
+        txtqType = new javax.swing.JTextField();
         txtinstitute = new javax.swing.JTextField();
         jLabel14 = new javax.swing.JLabel();
         txtyearComp = new javax.swing.JTextField();
@@ -66,36 +66,45 @@ public class CMasFebPreEducation extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel1.setText("Previous Education");
         jPanel1.add(jLabel1);
-        jLabel1.setBounds(198, 42, 173, 22);
+        jLabel1.setBounds(213, 33, 173, 22);
 
-        jLabel12.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel12.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel12.setText("Qualification type:");
         jPanel1.add(jLabel12);
-        jLabel12.setBounds(90, 130, 124, 17);
-        jPanel1.add(txtqType);
-        txtqType.setBounds(300, 130, 119, 20);
+        jLabel12.setBounds(93, 111, 109, 17);
 
-        jLabel13.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel13.setText("Institute");
+        jLabel13.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel13.setText("Institute:");
         jPanel1.add(jLabel13);
-        jLabel13.setBounds(90, 190, 61, 17);
-        jPanel1.add(txtinstitute);
-        txtinstitute.setBounds(300, 190, 119, 20);
+        jLabel13.setBounds(93, 182, 55, 17);
 
-        jLabel14.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        txtqType.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jPanel1.add(txtqType);
+        txtqType.setBounds(265, 108, 153, 23);
+
+        txtinstitute.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jPanel1.add(txtinstitute);
+        txtinstitute.setBounds(265, 179, 153, 23);
+
+        jLabel14.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel14.setText("Year of completion:");
         jPanel1.add(jLabel14);
-        jLabel14.setBounds(90, 250, 134, 17);
+        jLabel14.setBounds(93, 254, 119, 17);
+
+        txtyearComp.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jPanel1.add(txtyearComp);
-        txtyearComp.setBounds(300, 250, 119, 20);
+        txtyearComp.setBounds(265, 251, 153, 23);
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel2.setText("GPA");
+        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel2.setText("GPA:");
         jPanel1.add(jLabel2);
-        jLabel2.setBounds(90, 320, 90, 17);
-        jPanel1.add(txtgpa);
-        txtgpa.setBounds(300, 320, 119, 20);
+        jLabel2.setBounds(93, 320, 30, 17);
 
+        txtgpa.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jPanel1.add(txtgpa);
+        txtgpa.setBounds(265, 317, 153, 23);
+
+        jButton1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jButton1.setText("Next");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -103,9 +112,9 @@ public class CMasFebPreEducation extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jButton1);
-        jButton1.setBounds(340, 400, 55, 23);
+        jButton1.setBounds(369, 404, 76, 25);
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/nsbm/images/background1.jpg"))); // NOI18N
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/nsbm/images/wallpaper4.jpg"))); // NOI18N
         jPanel1.add(jLabel3);
         jLabel3.setBounds(0, 0, 580, 610);
 

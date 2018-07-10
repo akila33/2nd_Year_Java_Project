@@ -5,30 +5,33 @@
  */
 package nsbm;
 
+/**
+ *
+ * @author Rangoda
+ */
 import java.sql.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.*;
 
-/**
- *
- * @author Rangoda
- */
-public class CAddTeacher extends javax.swing.JFrame {
+public class AddTeacher extends javax.swing.JFrame {
 
     /**
-     * Creates new form CAddTeacher
+     * Creates new form AddTeacher
      */
-    
     Connection conn=null;
     PreparedStatement pst=null;
     ResultSet rs=null;
     
-    public CAddTeacher() {
+    public AddTeacher() {
         initComponents();
         
         setSize(576,610);
         setResizable(false);
+        
+        jButton2.setOpaque(false);
+        jButton2.setContentAreaFilled(false);
+        jButton2.setBorderPainted(false);
     }
 
     /**
@@ -47,18 +50,19 @@ public class CAddTeacher extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
         combo_tType = new javax.swing.JComboBox<>();
         txttecID = new javax.swing.JTextField();
         txtname = new javax.swing.JTextField();
-        txtqualification = new javax.swing.JTextField();
         txttitle = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
-        jLabel7 = new javax.swing.JLabel();
+        txtqualification = new javax.swing.JTextField();
         txtsubjects = new javax.swing.JTextField();
-        jLabel8 = new javax.swing.JLabel();
-        txtroom = new javax.swing.JTextField();
-        jLabel9 = new javax.swing.JLabel();
         txtlabID = new javax.swing.JTextField();
+        txtroom = new javax.swing.JTextField();
+        jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
         jLabel10 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -68,50 +72,74 @@ public class CAddTeacher extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel1.setText("Add Teacher");
         jPanel1.add(jLabel1);
-        jLabel1.setBounds(220, 30, 113, 22);
+        jLabel1.setBounds(253, 38, 113, 22);
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 51));
-        jLabel2.setText("Teacher ID:");
+        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel2.setText("Type:");
         jPanel1.add(jLabel2);
-        jLabel2.setBounds(80, 159, 100, 17);
+        jLabel2.setBounds(101, 101, 36, 17);
 
-        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(255, 255, 51));
-        jLabel3.setText("Type:");
+        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel3.setText("Teacher ID:");
         jPanel1.add(jLabel3);
-        jLabel3.setBounds(80, 93, 70, 17);
+        jLabel3.setBounds(101, 173, 72, 17);
 
-        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(255, 255, 51));
+        jLabel4.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel4.setText("Name:");
         jPanel1.add(jLabel4);
-        jLabel4.setBounds(80, 206, 70, 17);
+        jLabel4.setBounds(101, 222, 40, 17);
 
-        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(255, 255, 51));
+        jLabel5.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel5.setText("Qualifications:");
         jPanel1.add(jLabel5);
-        jLabel5.setBounds(80, 294, 110, 17);
+        jLabel5.setBounds(101, 324, 83, 17);
 
-        jLabel6.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(255, 255, 51));
+        jLabel6.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel6.setText("Title:");
         jPanel1.add(jLabel6);
-        jLabel6.setBounds(80, 254, 60, 17);
+        jLabel6.setBounds(101, 274, 29, 17);
 
+        jLabel7.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel7.setText("Subjects:");
+        jPanel1.add(jLabel7);
+        jLabel7.setBounds(101, 373, 58, 17);
+
+        jLabel8.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel8.setText("Room:");
+        jPanel1.add(jLabel8);
+        jLabel8.setBounds(101, 422, 42, 17);
+
+        jLabel9.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel9.setText("Lab ID:");
+        jPanel1.add(jLabel9);
+        jLabel9.setBounds(101, 469, 45, 17);
+
+        combo_tType.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         combo_tType.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Lecturer", "Instructor" }));
         jPanel1.add(combo_tType);
-        combo_tType.setBounds(222, 90, 73, 20);
+        combo_tType.setBounds(293, 98, 89, 23);
         jPanel1.add(txttecID);
-        txttecID.setBounds(222, 156, 115, 20);
+        txttecID.setBounds(293, 173, 121, 20);
         jPanel1.add(txtname);
-        txtname.setBounds(222, 203, 115, 20);
-        jPanel1.add(txtqualification);
-        txtqualification.setBounds(222, 291, 115, 20);
+        txtname.setBounds(293, 222, 121, 20);
         jPanel1.add(txttitle);
-        txttitle.setBounds(222, 251, 115, 20);
+        txttitle.setBounds(293, 274, 121, 20);
+        jPanel1.add(txtqualification);
+        txtqualification.setBounds(293, 324, 121, 20);
+        jPanel1.add(txtsubjects);
+        txtsubjects.setBounds(293, 373, 121, 20);
 
+        txtlabID.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtlabIDActionPerformed(evt);
+            }
+        });
+        jPanel1.add(txtlabID);
+        txtlabID.setBounds(293, 469, 123, 20);
+        jPanel1.add(txtroom);
+        txtroom.setBounds(293, 422, 121, 20);
+
+        jButton1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jButton1.setText("Add");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -119,41 +147,20 @@ public class CAddTeacher extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jButton1);
-        jButton1.setBounds(360, 520, 63, 23);
+        jButton1.setBounds(418, 527, 69, 25);
 
-        jLabel7.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(255, 255, 0));
-        jLabel7.setText("Subjects:");
-        jPanel1.add(jLabel7);
-        jLabel7.setBounds(80, 345, 100, 17);
-
-        txtsubjects.addActionListener(new java.awt.event.ActionListener() {
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/nsbm/images/back.png"))); // NOI18N
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtsubjectsActionPerformed(evt);
+                jButton2ActionPerformed(evt);
             }
         });
-        jPanel1.add(txtsubjects);
-        txtsubjects.setBounds(222, 345, 115, 20);
+        jPanel1.add(jButton2);
+        jButton2.setBounds(10, 11, 57, 33);
 
-        jLabel8.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(255, 255, 0));
-        jLabel8.setText("Room:");
-        jPanel1.add(jLabel8);
-        jLabel8.setBounds(80, 393, 80, 17);
-        jPanel1.add(txtroom);
-        txtroom.setBounds(222, 393, 115, 20);
-
-        jLabel9.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(255, 255, 0));
-        jLabel9.setText("Lab ID:");
-        jPanel1.add(jLabel9);
-        jLabel9.setBounds(80, 436, 70, 17);
-        jPanel1.add(txtlabID);
-        txtlabID.setBounds(222, 436, 115, 20);
-
-        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/nsbm/images/background11.jpg"))); // NOI18N
+        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/nsbm/images/wallpaper4.jpg"))); // NOI18N
         jPanel1.add(jLabel10);
-        jLabel10.setBounds(0, 0, 570, 610);
+        jLabel10.setBounds(0, 0, 580, 610);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -170,14 +177,13 @@ public class CAddTeacher extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
         try {
             // TODO add your handling code here:
             conn=MySqlConnect.ConnectDB();
         } catch (SQLException ex) {
             Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
         }
-        String Sql="INSERT INTO c_teacher (tecID,name,title,qualification,tType,labID) values (?,?,?,?,?,?)";
+        String Sql="INSERT INTO c_teacher (tecID,name,title,qualification,tType,subjects,room,labID) values (?,?,?,?,?,?,?,?)";
         try{
             String value=combo_tType.getSelectedItem().toString();
             
@@ -223,9 +229,16 @@ public class CAddTeacher extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void txtsubjectsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtsubjectsActionPerformed
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtsubjectsActionPerformed
+        CHome h=new CHome();
+        h.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void txtlabIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtlabIDActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtlabIDActionPerformed
 
     /**
      * @param args the command line arguments
@@ -244,20 +257,20 @@ public class CAddTeacher extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(CAddTeacher.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AddTeacher.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(CAddTeacher.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AddTeacher.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(CAddTeacher.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AddTeacher.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(CAddTeacher.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AddTeacher.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new CAddTeacher().setVisible(true);
+                new AddTeacher().setVisible(true);
             }
         });
     }
@@ -265,6 +278,7 @@ public class CAddTeacher extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> combo_tType;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;

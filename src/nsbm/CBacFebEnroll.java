@@ -193,6 +193,7 @@ public class CBacFebEnroll extends javax.swing.JFrame {
             //Semester 1 subject allocation
             try
             {
+                conn=MySqlConnect.ConnectDB();
                 String sql="SELECT * FROM b_subject WHERE credits=3 AND cType='Bsc' AND category=1 AND semester='Sem1'";
                 pst=conn.prepareStatement(sql);
                 rs=pst.executeQuery();
@@ -327,6 +328,7 @@ public class CBacFebEnroll extends javax.swing.JFrame {
             //Semester 1 subject allocation
             try
             {
+                conn=MySqlConnect.ConnectDB();
                 String sql="SELECT * FROM e_subject WHERE credits=3 AND cType='Bsc' AND category=1 AND semester='Sem1'";
                 pst=conn.prepareStatement(sql);
                 rs=pst.executeQuery();
@@ -490,56 +492,62 @@ public class CBacFebEnroll extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel1.setText("Enroll Details");
         jPanel1.add(jLabel1);
-        jLabel1.setBounds(248, 26, 119, 22);
+        jLabel1.setBounds(214, 26, 119, 22);
 
+        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel2.setText("Registration number:");
         jPanel1.add(jLabel2);
-        jLabel2.setBounds(61, 96, 101, 14);
+        jLabel2.setBounds(61, 96, 129, 17);
 
+        txtregNo.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         txtregNo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtregNoActionPerformed(evt);
             }
         });
         jPanel1.add(txtregNo);
-        txtregNo.setBounds(240, 93, 119, 20);
+        txtregNo.setBounds(268, 93, 149, 23);
 
+        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel3.setText("Basket Subjects:");
         jPanel1.add(jLabel3);
-        jLabel3.setBounds(61, 131, 80, 14);
+        jLabel3.setBounds(61, 134, 102, 17);
 
+        jLabel4.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel4.setText("Sem 1:");
         jPanel1.add(jLabel4);
-        jLabel4.setBounds(61, 175, 33, 14);
+        jLabel4.setBounds(61, 181, 44, 17);
 
+        jLabel5.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel5.setText("Sem 2:");
         jPanel1.add(jLabel5);
-        jLabel5.setBounds(310, 175, 33, 14);
+        jLabel5.setBounds(307, 181, 44, 17);
 
         jPanel1.add(sub11);
-        sub11.setBounds(51, 207, 28, 20);
+        sub11.setBounds(51, 216, 28, 20);
 
         jPanel1.add(sub12);
-        sub12.setBounds(189, 207, 28, 20);
+        sub12.setBounds(189, 216, 28, 20);
 
         jPanel1.add(sub21);
-        sub21.setBounds(331, 207, 28, 20);
+        sub21.setBounds(307, 216, 28, 20);
 
         jPanel1.add(sub22);
-        sub22.setBounds(487, 207, 28, 20);
+        sub22.setBounds(433, 216, 28, 20);
 
         jPanel1.add(sub13);
-        sub13.setBounds(51, 272, 28, 20);
+        sub13.setBounds(51, 281, 28, 20);
 
         jPanel1.add(sub14);
-        sub14.setBounds(189, 272, 28, 20);
+        sub14.setBounds(189, 281, 28, 20);
 
         jPanel1.add(sub23);
-        sub23.setBounds(331, 272, 28, 20);
+        sub23.setBounds(307, 281, 28, 20);
 
         jPanel1.add(sub24);
-        sub24.setBounds(487, 272, 28, 20);
+        sub24.setBounds(433, 281, 28, 20);
 
+        jButton1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jButton1.setText("Submit");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -547,9 +555,9 @@ public class CBacFebEnroll extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jButton1);
-        jButton1.setBounds(463, 382, 65, 23);
+        jButton1.setBounds(386, 501, 75, 25);
 
-        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/nsbm/images/background1.jpg"))); // NOI18N
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/nsbm/images/wallpaper4.jpg"))); // NOI18N
         jPanel1.add(jLabel6);
         jLabel6.setBounds(0, 0, 580, 610);
 
@@ -557,11 +565,11 @@ public class CBacFebEnroll extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 576, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 610, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -689,7 +697,7 @@ public class CBacFebEnroll extends javax.swing.JFrame {
                 String val1=txtregNo.getText().toString();
                 String val2=values[i];
 
-                String x="select sID from b_bac_student where regNo='"+val1+"'";
+                String x="SELECT sID FROM b_bac_student WHERE regNo='"+val1+"'";
                 try {
                     pst=conn.prepareStatement(x);
                 } catch (SQLException ex) {
@@ -824,6 +832,7 @@ public class CBacFebEnroll extends javax.swing.JFrame {
             PaymentDetails pd=new PaymentDetails(values,fac);
             pd.setVisible(true);
         }
+        
         
     }//GEN-LAST:event_jButton1ActionPerformed
 

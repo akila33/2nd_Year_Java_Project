@@ -63,20 +63,18 @@ public class AddStudent extends javax.swing.JFrame {
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
         txttelNo = new javax.swing.JTextField();
-        jLabel5 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setLayout(null);
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Personal & Course Details");
         jPanel1.add(jLabel2);
         jLabel2.setBounds(170, 20, 233, 22);
 
-        fName.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        fName.setForeground(new java.awt.Color(255, 255, 255));
+        fName.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         fName.setText("First Name");
         jPanel1.add(fName);
         fName.setBounds(110, 90, 90, 17);
@@ -87,10 +85,9 @@ public class AddStudent extends javax.swing.JFrame {
             }
         });
         jPanel1.add(txtfName);
-        txtfName.setBounds(300, 90, 120, 20);
+        txtfName.setBounds(300, 90, 140, 20);
 
-        lName.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        lName.setForeground(new java.awt.Color(255, 255, 255));
+        lName.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         lName.setText("Last Name");
         jPanel1.add(lName);
         lName.setBounds(110, 130, 80, 17);
@@ -101,13 +98,12 @@ public class AddStudent extends javax.swing.JFrame {
             }
         });
         jPanel1.add(txtlName);
-        txtlName.setBounds(300, 130, 121, 20);
+        txtlName.setBounds(300, 130, 140, 20);
 
-        dob.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        dob.setForeground(new java.awt.Color(255, 255, 255));
+        dob.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         dob.setText("DOB");
         jPanel1.add(dob);
-        dob.setBounds(110, 170, 31, 17);
+        dob.setBounds(110, 170, 28, 17);
 
         txtdob.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -115,13 +111,12 @@ public class AddStudent extends javax.swing.JFrame {
             }
         });
         jPanel1.add(txtdob);
-        txtdob.setBounds(300, 170, 121, 20);
+        txtdob.setBounds(300, 170, 140, 20);
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel1.setText("Address");
         jPanel1.add(jLabel1);
-        jLabel1.setBounds(110, 210, 56, 17);
+        jLabel1.setBounds(110, 210, 48, 17);
 
         txtaddress.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -129,13 +124,12 @@ public class AddStudent extends javax.swing.JFrame {
             }
         });
         jPanel1.add(txtaddress);
-        txtaddress.setBounds(300, 210, 121, 20);
+        txtaddress.setBounds(300, 210, 140, 20);
 
-        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel4.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel4.setText("Tel No.");
         jPanel1.add(jLabel4);
-        jLabel4.setBounds(110, 250, 48, 17);
+        jLabel4.setBounds(110, 250, 42, 17);
 
         txtemail.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -143,7 +137,7 @@ public class AddStudent extends javax.swing.JFrame {
             }
         });
         jPanel1.add(txtemail);
-        txtemail.setBounds(300, 300, 121, 20);
+        txtemail.setBounds(300, 300, 140, 20);
 
         jButton2.setText("Cancel");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -163,42 +157,47 @@ public class AddStudent extends javax.swing.JFrame {
         jPanel1.add(jButton1);
         jButton1.setBounds(1100, 1480, 55, 23);
 
-        jLabel8.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel8.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel8.setText("Email");
         jPanel1.add(jLabel8);
-        jLabel8.setBounds(110, 300, 36, 17);
+        jLabel8.setBounds(110, 300, 31, 17);
 
-        jLabel9.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel9.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel9.setText("Faculty");
         jPanel1.add(jLabel9);
-        jLabel9.setBounds(110, 340, 49, 17);
+        jLabel9.setBounds(110, 350, 44, 17);
 
-        jLabel10.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel10.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel10.setText("Course type");
         jPanel1.add(jLabel10);
         jLabel10.setBounds(110, 410, 100, 17);
 
-        jLabel11.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel11.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel11.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel11.setText("Intake");
         jPanel1.add(jLabel11);
-        jLabel11.setBounds(110, 460, 46, 17);
+        jLabel11.setBounds(110, 470, 38, 17);
 
+        combo_faculty.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         combo_faculty.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Computing", "Business", "Engineering" }));
         jPanel1.add(combo_faculty);
-        combo_faculty.setBounds(300, 340, 100, 20);
+        combo_faculty.setBounds(300, 340, 120, 30);
 
+        combo_type.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         combo_type.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Bsc", "Msc" }));
         jPanel1.add(combo_type);
-        combo_type.setBounds(300, 410, 60, 20);
+        combo_type.setBounds(300, 410, 60, 23);
 
+        combo_intake.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         combo_intake.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Feb", "July" }));
+        combo_intake.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                combo_intakeActionPerformed(evt);
+            }
+        });
         jPanel1.add(combo_intake);
-        combo_intake.setBounds(300, 460, 60, 20);
+        combo_intake.setBounds(300, 470, 60, 23);
 
+        jButton3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jButton3.setText("Cancel");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -206,8 +205,9 @@ public class AddStudent extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jButton3);
-        jButton3.setBounds(340, 540, 80, 23);
+        jButton3.setBounds(340, 540, 80, 25);
 
+        jButton4.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jButton4.setText("Next");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -215,7 +215,7 @@ public class AddStudent extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jButton4);
-        jButton4.setBounds(460, 540, 60, 23);
+        jButton4.setBounds(460, 540, 70, 25);
 
         txttelNo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -223,11 +223,11 @@ public class AddStudent extends javax.swing.JFrame {
             }
         });
         jPanel1.add(txttelNo);
-        txttelNo.setBounds(300, 250, 121, 20);
+        txttelNo.setBounds(300, 250, 140, 20);
 
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/nsbm/images/background11.jpg"))); // NOI18N
-        jPanel1.add(jLabel5);
-        jLabel5.setBounds(0, 0, 580, 610);
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/nsbm/images/wallpaper4.jpg"))); // NOI18N
+        jPanel1.add(jLabel3);
+        jLabel3.setBounds(0, 0, 580, 610);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -685,6 +685,10 @@ public class AddStudent extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txttelNoActionPerformed
 
+    private void combo_intakeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_combo_intakeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_combo_intakeActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -734,8 +738,8 @@ public class AddStudent extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;

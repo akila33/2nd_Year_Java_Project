@@ -23,7 +23,7 @@ public class CMasFebEnroll extends javax.swing.JFrame {
     PreparedStatement pst=null;
     ResultSet rs=null;
     
-    String fac;
+    static String fac;
     
     public CMasFebEnroll() {
         initComponents();
@@ -41,135 +41,406 @@ public class CMasFebEnroll extends javax.swing.JFrame {
     //Allocate subjects for selection
     public void setvalues()
     {
-        //Semester 2 subject allocation
-        try
+        if(fac=="Computing")
         {
-            String sql="SELECT name FROM c_subject WHERE credits=3 AND cType='Msc' AND category=1 AND semester='Sem1'";
-            pst=conn.prepareStatement(sql);
-            rs=pst.executeQuery();
-            sub11.removeAllItems();
-            while(rs.next())
+            try
             {
-                sub11.addItem(rs.getString(sql));
+                conn=MySqlConnect.ConnectDB();
+                String sql="SELECT * FROM c_subject WHERE credits=3 AND cType='Msc' AND category=1 AND semester='Sem1'";
+                pst=conn.prepareStatement(sql);
+                rs=pst.executeQuery();
+                sub11.removeAllItems();
+                while(rs.next())
+                {
+                    sub11.addItem(rs.getString("name"));
+                }
             }
-        }
-        catch(Exception e)
-        {
-            JOptionPane.showMessageDialog(null, e);
+            catch(Exception e)
+            {
+                JOptionPane.showMessageDialog(null, e);
+            }
+
+            try
+            {
+                String sql="SELECT * FROM c_subject WHERE credits=3 AND cType='Msc' AND category=2 AND semester='Sem1'";
+                pst=conn.prepareStatement(sql);
+                rs=pst.executeQuery();
+                sub12.removeAllItems();
+                while(rs.next())
+                {
+                    sub12.addItem(rs.getString("name"));
+                }
+            }
+            catch(Exception e)
+            {
+                JOptionPane.showMessageDialog(null, e);
+            }
+
+            try
+            {
+                String sql="SELECT * FROM c_subject WHERE credits=2 AND cType='Msc' AND category=1 AND semester='Sem1'";
+                pst=conn.prepareStatement(sql);
+                rs=pst.executeQuery();
+                sub13.removeAllItems();
+                while(rs.next())
+                {
+                    sub13.addItem(rs.getString("name"));
+                }
+            }
+            catch(Exception e)
+            {
+                JOptionPane.showMessageDialog(null, e);
+            }
+
+            try
+            {
+                String sql="SELECT * FROM c_subject WHERE credits=2 AND cType='Msc' AND category=2 AND semester='Sem1'";
+                pst=conn.prepareStatement(sql);
+                rs=pst.executeQuery();
+                sub14.removeAllItems();
+                while(rs.next())
+                {
+                    sub14.addItem(rs.getString("name"));
+                }
+            }
+            catch(Exception e)
+            {
+                JOptionPane.showMessageDialog(null, e);
+            }
+
+            //Semester 2 subject allocation
+            try
+            {
+                String sql="SELECT * FROM c_subject WHERE credits=3 AND cType='Msc' AND category=1 AND semester='Sem2'";
+                pst=conn.prepareStatement(sql);
+                rs=pst.executeQuery();
+                sub21.removeAllItems();
+                while(rs.next())
+                {
+                    sub21.addItem(rs.getString("name"));
+                }
+            }
+            catch(Exception e)
+            {
+                JOptionPane.showMessageDialog(null, e);
+            }
+
+            try
+            {
+                String sql="SELECT * FROM c_subject WHERE credits=3 AND cType='Msc' AND category=2 AND semester='Sem2'";
+                pst=conn.prepareStatement(sql);
+                rs=pst.executeQuery();
+                sub12.removeAllItems();
+                while(rs.next())
+                {
+                    sub12.addItem(rs.getString("name"));
+                }
+            }
+            catch(Exception e)
+            {
+                JOptionPane.showMessageDialog(null, e);
+            }
+
+            try
+            {
+                String sql="SELECT * FROM c_subject WHERE credits=2 AND cType='Msc' AND category=1 AND semester='Sem2'";
+                pst=conn.prepareStatement(sql);
+                rs=pst.executeQuery();
+                sub13.removeAllItems();
+                while(rs.next())
+                {
+                    sub13.addItem(rs.getString("name"));
+                }
+            }
+            catch(Exception e)
+            {
+                JOptionPane.showMessageDialog(null, e);
+            }
+
+            try
+            {
+                String sql="SELECT * FROM c_subject WHERE credits=2 AND cType='Msc' AND category=2 AND semester='Sem2'";
+                pst=conn.prepareStatement(sql);
+                rs=pst.executeQuery();
+                sub14.removeAllItems();
+                while(rs.next())
+                {
+                    sub14.addItem(rs.getString("name"));
+                }
+            }
+            catch(Exception e)
+            {
+                JOptionPane.showMessageDialog(null, e);
+            }
         }
         
-        try
+        
+        if(fac=="Business")
         {
-            String sql="SELECT name FROM c_subject WHERE credits=3 AND cType='Msc' AND category=2 AND semester='Sem1'";
-            pst=conn.prepareStatement(sql);
-            rs=pst.executeQuery();
-            sub12.removeAllItems();
-            while(rs.next())
+            try
             {
-                sub12.addItem(rs.getString(sql));
+                conn=MySqlConnect.ConnectDB();
+                String sql="SELECT * FROM b_subject WHERE credits=3 AND cType='Msc' AND category=1 AND semester='Sem1'";
+                pst=conn.prepareStatement(sql);
+                rs=pst.executeQuery();
+                sub11.removeAllItems();
+                while(rs.next())
+                {
+                    sub11.addItem(rs.getString("name"));
+                }
             }
-        }
-        catch(Exception e)
-        {
-            JOptionPane.showMessageDialog(null, e);
+            catch(Exception e)
+            {
+                JOptionPane.showMessageDialog(null, e);
+            }
+
+            try
+            {
+                String sql="SELECT * FROM b_subject WHERE credits=3 AND cType='Msc' AND category=2 AND semester='Sem1'";
+                pst=conn.prepareStatement(sql);
+                rs=pst.executeQuery();
+                sub12.removeAllItems();
+                while(rs.next())
+                {
+                    sub12.addItem(rs.getString("name"));
+                }
+            }
+            catch(Exception e)
+            {
+                JOptionPane.showMessageDialog(null, e);
+            }
+
+            try
+            {
+                String sql="SELECT * FROM b_subject WHERE credits=2 AND cType='Msc' AND category=1 AND semester='Sem1'";
+                pst=conn.prepareStatement(sql);
+                rs=pst.executeQuery();
+                sub13.removeAllItems();
+                while(rs.next())
+                {
+                    sub13.addItem(rs.getString("name"));
+                }
+            }
+            catch(Exception e)
+            {
+                JOptionPane.showMessageDialog(null, e);
+            }
+
+            try
+            {
+                String sql="SELECT * FROM b_subject WHERE credits=2 AND cType='Msc' AND category=2 AND semester='Sem1'";
+                pst=conn.prepareStatement(sql);
+                rs=pst.executeQuery();
+                sub14.removeAllItems();
+                while(rs.next())
+                {
+                    sub14.addItem(rs.getString("name"));
+                }
+            }
+            catch(Exception e)
+            {
+                JOptionPane.showMessageDialog(null, e);
+            }
+
+            //Semester 2 subject allocation
+            try
+            {
+                String sql="SELECT * FROM b_subject WHERE credits=3 AND cType='Msc' AND category=1 AND semester='Sem2'";
+                pst=conn.prepareStatement(sql);
+                rs=pst.executeQuery();
+                sub21.removeAllItems();
+                while(rs.next())
+                {
+                    sub21.addItem(rs.getString("name"));
+                }
+            }
+            catch(Exception e)
+            {
+                JOptionPane.showMessageDialog(null, e);
+            }
+
+            try
+            {
+                String sql="SELECT * FROM b_subject WHERE credits=3 AND cType='Msc' AND category=2 AND semester='Sem2'";
+                pst=conn.prepareStatement(sql);
+                rs=pst.executeQuery();
+                sub12.removeAllItems();
+                while(rs.next())
+                {
+                    sub12.addItem(rs.getString("name"));
+                }
+            }
+            catch(Exception e)
+            {
+                JOptionPane.showMessageDialog(null, e);
+            }
+
+            try
+            {
+                String sql="SELECT * FROM b_subject WHERE credits=2 AND cType='Msc' AND category=1 AND semester='Sem2'";
+                pst=conn.prepareStatement(sql);
+                rs=pst.executeQuery();
+                sub13.removeAllItems();
+                while(rs.next())
+                {
+                    sub13.addItem(rs.getString("name"));
+                }
+            }
+            catch(Exception e)
+            {
+                JOptionPane.showMessageDialog(null, e);
+            }
+
+            try
+            {
+                String sql="SELECT * FROM b_subject WHERE credits=2 AND cType='Msc' AND category=2 AND semester='Sem2'";
+                pst=conn.prepareStatement(sql);
+                rs=pst.executeQuery();
+                sub14.removeAllItems();
+                while(rs.next())
+                {
+                    sub14.addItem(rs.getString("name"));
+                }
+            }
+            catch(Exception e)
+            {
+                JOptionPane.showMessageDialog(null, e);
+            }
         }
         
-        try
+        if(fac=="Engineering")
         {
-            String sql="SELECT name FROM c_subject WHERE credits=2 AND cType='Msc' AND category=1 AND semester='Sem1'";
-            pst=conn.prepareStatement(sql);
-            rs=pst.executeQuery();
-            sub13.removeAllItems();
-            while(rs.next())
+            try
             {
-                sub13.addItem(rs.getString(sql));
+                conn=MySqlConnect.ConnectDB();
+                String sql="SELECT * FROM e_subject WHERE credits=3 AND cType='Msc' AND category=1 AND semester='Sem1'";
+                pst=conn.prepareStatement(sql);
+                rs=pst.executeQuery();
+                sub11.removeAllItems();
+                while(rs.next())
+                {
+                    sub11.addItem(rs.getString("name"));
+                }
             }
-        }
-        catch(Exception e)
-        {
-            JOptionPane.showMessageDialog(null, e);
+            catch(Exception e)
+            {
+                JOptionPane.showMessageDialog(null, e);
+            }
+
+            try
+            {
+                String sql="SELECT * FROM e_subject WHERE credits=3 AND cType='Msc' AND category=2 AND semester='Sem1'";
+                pst=conn.prepareStatement(sql);
+                rs=pst.executeQuery();
+                sub12.removeAllItems();
+                while(rs.next())
+                {
+                    sub12.addItem(rs.getString("name"));
+                }
+            }
+            catch(Exception e)
+            {
+                JOptionPane.showMessageDialog(null, e);
+            }
+
+            try
+            {
+                String sql="SELECT * FROM e_subject WHERE credits=2 AND cType='Msc' AND category=1 AND semester='Sem1'";
+                pst=conn.prepareStatement(sql);
+                rs=pst.executeQuery();
+                sub13.removeAllItems();
+                while(rs.next())
+                {
+                    sub13.addItem(rs.getString("name"));
+                }
+            }
+            catch(Exception e)
+            {
+                JOptionPane.showMessageDialog(null, e);
+            }
+
+            try
+            {
+                String sql="SELECT * FROM e_subject WHERE credits=2 AND cType='Msc' AND category=2 AND semester='Sem1'";
+                pst=conn.prepareStatement(sql);
+                rs=pst.executeQuery();
+                sub14.removeAllItems();
+                while(rs.next())
+                {
+                    sub14.addItem(rs.getString("name"));
+                }
+            }
+            catch(Exception e)
+            {
+                JOptionPane.showMessageDialog(null, e);
+            }
+
+            //Semester 2 subject allocation
+            try
+            {
+                String sql="SELECT * FROM e_subject WHERE credits=3 AND cType='Msc' AND category=1 AND semester='Sem2'";
+                pst=conn.prepareStatement(sql);
+                rs=pst.executeQuery();
+                sub21.removeAllItems();
+                while(rs.next())
+                {
+                    sub21.addItem(rs.getString("name"));
+                }
+            }
+            catch(Exception e)
+            {
+                JOptionPane.showMessageDialog(null, e);
+            }
+
+            try
+            {
+                String sql="SELECT * FROM e_subject WHERE credits=3 AND cType='Msc' AND category=2 AND semester='Sem2'";
+                pst=conn.prepareStatement(sql);
+                rs=pst.executeQuery();
+                sub12.removeAllItems();
+                while(rs.next())
+                {
+                    sub12.addItem(rs.getString("name"));
+                }
+            }
+            catch(Exception e)
+            {
+                JOptionPane.showMessageDialog(null, e);
+            }
+
+            try
+            {
+                String sql="SELECT * FROM e_subject WHERE credits=2 AND cType='Msc' AND category=1 AND semester='Sem2'";
+                pst=conn.prepareStatement(sql);
+                rs=pst.executeQuery();
+                sub13.removeAllItems();
+                while(rs.next())
+                {
+                    sub13.addItem(rs.getString("name"));
+                }
+            }
+            catch(Exception e)
+            {
+                JOptionPane.showMessageDialog(null, e);
+            }
+
+            try
+            {
+                String sql="SELECT * FROM e_subject WHERE credits=2 AND cType='Msc' AND category=2 AND semester='Sem2'";
+                pst=conn.prepareStatement(sql);
+                rs=pst.executeQuery();
+                sub14.removeAllItems();
+                while(rs.next())
+                {
+                    sub14.addItem(rs.getString("name"));
+                }
+            }
+            catch(Exception e)
+            {
+                JOptionPane.showMessageDialog(null, e);
+            }
         }
         
-        try
-        {
-            String sql="SELECT name FROM c_subject WHERE credits=2 AND cType='Msc' AND category=2 AND semester='Sem1'";
-            pst=conn.prepareStatement(sql);
-            rs=pst.executeQuery();
-            sub14.removeAllItems();
-            while(rs.next())
-            {
-                sub14.addItem(rs.getString(sql));
-            }
-        }
-        catch(Exception e)
-        {
-            JOptionPane.showMessageDialog(null, e);
-        }
-        
-        //Semester 2 subject allocation
-        try
-        {
-            String sql="SELECT name FROM c_subject WHERE credits=3 AND cType='Msc' AND category=1 AND semester='Sem2'";
-            pst=conn.prepareStatement(sql);
-            rs=pst.executeQuery();
-            sub21.removeAllItems();
-            while(rs.next())
-            {
-                sub21.addItem(rs.getString(sql));
-            }
-        }
-        catch(Exception e)
-        {
-            JOptionPane.showMessageDialog(null, e);
-        }
-        
-        try
-        {
-            String sql="SELECT name FROM c_subject WHERE credits=3 AND cType='Msc' AND category=2 AND semester='Sem2'";
-            pst=conn.prepareStatement(sql);
-            rs=pst.executeQuery();
-            sub12.removeAllItems();
-            while(rs.next())
-            {
-                sub12.addItem(rs.getString(sql));
-            }
-        }
-        catch(Exception e)
-        {
-            JOptionPane.showMessageDialog(null, e);
-        }
-        
-        try
-        {
-            String sql="SELECT name FROM c_subject WHERE credits=2 AND cType='Msc' AND category=1 AND semester='Sem2'";
-            pst=conn.prepareStatement(sql);
-            rs=pst.executeQuery();
-            sub13.removeAllItems();
-            while(rs.next())
-            {
-                sub13.addItem(rs.getString(sql));
-            }
-        }
-        catch(Exception e)
-        {
-            JOptionPane.showMessageDialog(null, e);
-        }
-        
-        try
-        {
-            String sql="SELECT name FROM c_subject WHERE credits=2 AND cType='Msc' AND category=2 AND semester='Sem2'";
-            pst=conn.prepareStatement(sql);
-            rs=pst.executeQuery();
-            sub14.removeAllItems();
-            while(rs.next())
-            {
-                sub14.addItem(rs.getString(sql));
-            }
-        }
-        catch(Exception e)
-        {
-            JOptionPane.showMessageDialog(null, e);
-        }
     }
 
     /**
@@ -206,26 +477,33 @@ public class CMasFebEnroll extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel1.setText("Enroll Details");
         jPanel1.add(jLabel1);
-        jLabel1.setBounds(163, 31, 119, 22);
+        jLabel1.setBounds(246, 29, 119, 22);
 
+        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel2.setText("Registration number:");
         jPanel1.add(jLabel2);
-        jLabel2.setBounds(65, 84, 101, 14);
-        jPanel1.add(txtregNo);
-        txtregNo.setBounds(318, 81, 120, 20);
+        jLabel2.setBounds(65, 84, 129, 17);
 
+        txtregNo.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jPanel1.add(txtregNo);
+        txtregNo.setBounds(262, 81, 158, 23);
+
+        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel3.setText("Basket Subjects:");
         jPanel1.add(jLabel3);
-        jLabel3.setBounds(65, 119, 80, 14);
+        jLabel3.setBounds(65, 122, 102, 17);
 
+        jLabel4.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel4.setText("Sem 1:");
         jPanel1.add(jLabel4);
-        jLabel4.setBounds(65, 155, 33, 14);
+        jLabel4.setBounds(65, 161, 44, 17);
 
+        jLabel5.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel5.setText("Sem 2:");
         jPanel1.add(jLabel5);
-        jLabel5.setBounds(246, 151, 33, 14);
+        jLabel5.setBounds(307, 161, 44, 17);
 
+        jButton1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jButton1.setText("Submit");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -233,41 +511,33 @@ public class CMasFebEnroll extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jButton1);
-        jButton1.setBounds(386, 341, 65, 23);
+        jButton1.setBounds(438, 432, 75, 25);
 
-        sub11.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Web", "Latex" }));
         jPanel1.add(sub11);
-        sub11.setBounds(44, 198, 52, 20);
+        sub11.setBounds(65, 207, 28, 20);
 
-        sub12.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Python", "Scala" }));
         jPanel1.add(sub12);
-        sub12.setBounds(146, 198, 59, 20);
+        sub12.setBounds(180, 207, 28, 20);
 
-        sub21.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Media", "Graphics" }));
         jPanel1.add(sub21);
-        sub21.setBounds(259, 198, 66, 20);
+        sub21.setBounds(307, 207, 28, 20);
 
-        sub22.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Java", "C#" }));
         jPanel1.add(sub22);
-        sub22.setBounds(377, 198, 48, 20);
+        sub22.setBounds(438, 207, 28, 20);
 
-        sub24.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Accounting", "Management" }));
         jPanel1.add(sub24);
-        sub24.setBounds(377, 263, 87, 20);
+        sub24.setBounds(438, 290, 28, 20);
 
-        sub23.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Discrete", "Logarithms" }));
         jPanel1.add(sub23);
-        sub23.setBounds(259, 263, 77, 20);
+        sub23.setBounds(307, 290, 28, 20);
 
-        sub14.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Econ", "BS" }));
         jPanel1.add(sub14);
-        sub14.setBounds(146, 263, 48, 20);
+        sub14.setBounds(180, 290, 28, 20);
 
-        sub13.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Maths1", "Stat" }));
         jPanel1.add(sub13);
-        sub13.setBounds(44, 263, 60, 20);
+        sub13.setBounds(65, 290, 28, 20);
 
-        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/nsbm/images/background1.jpg"))); // NOI18N
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/nsbm/images/wallpaper4.jpg"))); // NOI18N
         jPanel1.add(jLabel6);
         jLabel6.setBounds(0, 0, 580, 610);
 
@@ -275,11 +545,11 @@ public class CMasFebEnroll extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 576, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 610, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -574,7 +844,8 @@ public class CMasFebEnroll extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new CMasFebEnroll().setVisible(true);
+                CMasFebEnroll tst=new CMasFebEnroll(fac);
+                tst.setVisible(true);
             }
         });
     }

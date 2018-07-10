@@ -65,12 +65,12 @@ public class CBacFebPreEducation extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel1.setText("Previous Education");
         jPanel1.add(jLabel1);
-        jLabel1.setBounds(220, 30, 173, 22);
+        jLabel1.setBounds(210, 30, 173, 22);
 
-        jLabel8.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel8.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel8.setText("A/L results:");
         jPanel1.add(jLabel8);
-        jLabel8.setBounds(80, 110, 81, 17);
+        jLabel8.setBounds(80, 110, 90, 17);
 
         txtresult.setColumns(20);
         txtresult.setRows(5);
@@ -79,17 +79,17 @@ public class CBacFebPreEducation extends javax.swing.JFrame {
         jPanel1.add(jScrollPane1);
         jScrollPane1.setBounds(220, 100, 166, 96);
 
-        jLabel10.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel10.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel10.setText("Z score:");
         jPanel1.add(jLabel10);
-        jLabel10.setBounds(80, 260, 55, 17);
+        jLabel10.setBounds(80, 256, 70, 17);
         jPanel1.add(txtscore);
-        txtscore.setBounds(230, 250, 117, 20);
+        txtscore.setBounds(220, 256, 117, 20);
 
-        jLabel9.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel9.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel9.setText("Rank:");
         jPanel1.add(jLabel9);
-        jLabel9.setBounds(80, 310, 40, 17);
+        jLabel9.setBounds(80, 330, 50, 17);
 
         txtrank.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -97,8 +97,9 @@ public class CBacFebPreEducation extends javax.swing.JFrame {
             }
         });
         jPanel1.add(txtrank);
-        txtrank.setBounds(230, 310, 115, 20);
+        txtrank.setBounds(220, 330, 115, 20);
 
+        jButton1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jButton1.setText("Next");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -106,9 +107,9 @@ public class CBacFebPreEducation extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jButton1);
-        jButton1.setBounds(410, 410, 55, 23);
+        jButton1.setBounds(410, 430, 90, 25);
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/nsbm/images/background11.jpg"))); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/nsbm/images/wallpaper4.jpg"))); // NOI18N
         jPanel1.add(jLabel2);
         jLabel2.setBounds(0, 0, 580, 610);
 
@@ -116,11 +117,11 @@ public class CBacFebPreEducation extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 576, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 610, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -195,7 +196,7 @@ public class CBacFebPreEducation extends javax.swing.JFrame {
             }
         }
         
-        else if(fac=="Enginnering")
+        else if(fac=="Engineering")
         {
             String Sql="UPDATE e_bac_student SET alResult=? , zScore=? , rank=? WHERE sID=(Select max(sID) as sID from e_bac_student)";
             try{
