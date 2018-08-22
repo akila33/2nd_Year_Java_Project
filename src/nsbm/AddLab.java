@@ -148,13 +148,10 @@ public class AddLab extends javax.swing.JFrame {
             
             
             pst.executeUpdate();
-            if(true){
-                JOptionPane.showMessageDialog(null, "Record added successfully");
-                System.exit(0);
-            }
-            else{
-                JOptionPane.showMessageDialog(null, "Invalid username or password","Access Denied", JOptionPane.ERROR_MESSAGE);
-            }
+           
+            JOptionPane.showMessageDialog(null, "Record added successfully");
+            System.exit(0);
+           
         }catch(Exception e){
             JOptionPane.showMessageDialog(null, e);
         }

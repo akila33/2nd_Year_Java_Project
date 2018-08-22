@@ -151,14 +151,11 @@ public class CMasFebPreEducation extends javax.swing.JFrame {
                 pst.setString(3,txtyearComp.getText());
                 pst.setString(4,txtgpa.getText());
                 pst.executeUpdate();
-                if(true){
-                    CMasFebEnroll cmfe=new CMasFebEnroll();
-                    cmfe.setVisible(true);
-                    //System.exit(0);
-                }
-                else{
-                    JOptionPane.showMessageDialog(null, "Invalid username or password","Access Denied", JOptionPane.ERROR_MESSAGE);
-                }
+
+                CMasFebEnroll cmfe=new CMasFebEnroll();
+                cmfe.setVisible(true);
+                //System.exit(0);
+                
             }catch(Exception e){
                 JOptionPane.showMessageDialog(null, e);
             }
@@ -174,14 +171,11 @@ public class CMasFebPreEducation extends javax.swing.JFrame {
                 pst.setString(3,txtyearComp.getText());
                 pst.setString(4,txtgpa.getText());
                 pst.executeUpdate();
-                if(true){
-                    CMasFebEnroll cmfe=new CMasFebEnroll();
-                    cmfe.setVisible(true);
-                    //System.exit(0);
-                }
-                else{
-                    JOptionPane.showMessageDialog(null, "Invalid username or password","Access Denied", JOptionPane.ERROR_MESSAGE);
-                }
+       
+                CMasFebEnroll cmfe=new CMasFebEnroll();
+                cmfe.setVisible(true);
+                //System.exit(0);
+               
             }catch(Exception e){
                 JOptionPane.showMessageDialog(null, e);
             }
@@ -197,14 +191,11 @@ public class CMasFebPreEducation extends javax.swing.JFrame {
                 pst.setString(3,txtyearComp.getText());
                 pst.setString(4,txtgpa.getText());
                 pst.executeUpdate();
-                if(true){
-                    CMasFebEnroll cmfe=new CMasFebEnroll();
-                    cmfe.setVisible(true);
-                    //System.exit(0);
-                }
-                else{
-                    JOptionPane.showMessageDialog(null, "Invalid username or password","Access Denied", JOptionPane.ERROR_MESSAGE);
-                }
+                
+                CMasFebEnroll cmfe=new CMasFebEnroll();
+                cmfe.setVisible(true);
+                //System.exit(0);
+                
             }catch(Exception e){
                 JOptionPane.showMessageDialog(null, e);
             }

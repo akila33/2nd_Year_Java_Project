@@ -59,6 +59,7 @@ public class CBacJulyPreEducation extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(500, 500));
 
         jPanel1.setLayout(null);
 
@@ -77,7 +78,7 @@ public class CBacJulyPreEducation extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jButton1);
-        jButton1.setBounds(420, 460, 80, 25);
+        jButton1.setBounds(395, 460, 80, 25);
 
         txtresult.setColumns(20);
         txtresult.setRows(5);
@@ -145,13 +146,10 @@ public class CBacJulyPreEducation extends javax.swing.JFrame {
                 pst.setString(2,txtscore.getText());
                 pst.setString(3,txtrank.getText());
                 pst.executeUpdate();
-                if(true){
-                    CBacJulyEnroll cbje=new CBacJulyEnroll(fac);
-                    cbje.setVisible(true);
-                }
-                else{
-                    JOptionPane.showMessageDialog(null, "Invalid username or password","Access Denied", JOptionPane.ERROR_MESSAGE);
-                }
+ 
+                CBacJulyEnroll cbje=new CBacJulyEnroll(fac);
+                cbje.setVisible(true);
+
             }catch(Exception e){
                 JOptionPane.showMessageDialog(null, e);
             }
@@ -166,13 +164,10 @@ public class CBacJulyPreEducation extends javax.swing.JFrame {
                 pst.setString(2,txtscore.getText());
                 pst.setString(3,txtrank.getText());
                 pst.executeUpdate();
-                if(true){
-                    CBacJulyEnroll cbje=new CBacJulyEnroll(fac);
-                    cbje.setVisible(true);
-                }
-                else{
-                    JOptionPane.showMessageDialog(null, "Invalid username or password","Access Denied", JOptionPane.ERROR_MESSAGE);
-                }
+
+                CBacJulyEnroll cbje=new CBacJulyEnroll(fac);
+                cbje.setVisible(true);
+                
             }catch(Exception e){
                 JOptionPane.showMessageDialog(null, e);
             }
@@ -187,13 +182,10 @@ public class CBacJulyPreEducation extends javax.swing.JFrame {
                 pst.setString(2,txtscore.getText());
                 pst.setString(3,txtrank.getText());
                 pst.executeUpdate();
-                if(true){
-                    CBacJulyEnroll cbje=new CBacJulyEnroll(fac);
-                    cbje.setVisible(true);
-                }
-                else{
-                    JOptionPane.showMessageDialog(null, "Invalid username or password","Access Denied", JOptionPane.ERROR_MESSAGE);
-                }
+
+                CBacJulyEnroll cbje=new CBacJulyEnroll(fac);
+                cbje.setVisible(true);
+               
             }catch(Exception e){
                 JOptionPane.showMessageDialog(null, e);
             }

@@ -187,43 +187,44 @@ public class AddTeacher extends javax.swing.JFrame {
         try{
             String value=combo_tType.getSelectedItem().toString();
             
-            if(value=="Lecturer")
-            {
-                txtlabID.setEditable(false);
+            //if(value=="Lecturer")
+            //{
+                //txtlabID.setEditable(false);
                 
+//                pst=conn.prepareStatement(Sql);
+//                pst.setString(1,txttecID.getText());
+//                pst.setString(2,txtname.getText());
+//                pst.setString(3,txttitle.getText());
+//                pst.setString(4,txtqualification.getText());
+//                pst.setString(5,value);
+//                pst.setString(6,txtsubjects.getText());
+//                pst.setString(7,txtroom.getText());
+            //}
+            //else
+            //{
                 pst=conn.prepareStatement(Sql);
                 pst.setString(1,txttecID.getText());
                 pst.setString(2,txtname.getText());
                 pst.setString(3,txttitle.getText());
                 pst.setString(4,txtqualification.getText());
-                pst.setString(3,txtsubjects.getText());
-                pst.setString(3,txtroom.getText());
-            }
-            else
-            {
-                pst=conn.prepareStatement(Sql);
-                pst.setString(1,txttecID.getText());
-                pst.setString(2,txtname.getText());
-                pst.setString(3,txttitle.getText());
-                pst.setString(4,txtqualification.getText());
-                pst.setString(3,txtsubjects.getText());
-                pst.setString(3,txtroom.getText());
-                pst.setString(3,txtlabID.getText());
-            }
+                pst.setString(5,value);
+                pst.setString(6,txtsubjects.getText());
+                pst.setString(7,txtroom.getText());
+                pst.setString(8,txtlabID.getText());
+            //}
                 
             
             
             
-            pst.setString(5,value);
+            
             
             pst.executeUpdate();
-            if(true){
-                JOptionPane.showMessageDialog(null, "Record added successfully");
-                System.exit(0);
-            }
-            else{
-                JOptionPane.showMessageDialog(null, "Invalid username or password","Access Denied", JOptionPane.ERROR_MESSAGE);
-            }
+            
+            JOptionPane.showMessageDialog(null, "Record added successfully");
+            CHome h=new CHome();
+            h.setVisible(true);
+            dispose();
+            
         }catch(Exception e){
             JOptionPane.showMessageDialog(null, e);
         }

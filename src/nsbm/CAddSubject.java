@@ -29,6 +29,10 @@ public class CAddSubject extends javax.swing.JFrame {
         
         setSize(576,610);
         setResizable(false);
+        
+        jButton2.setOpaque(false);
+        jButton2.setContentAreaFilled(false);
+        jButton2.setBorderPainted(false);
     }
 
     /**
@@ -69,7 +73,7 @@ public class CAddSubject extends javax.swing.JFrame {
         combo_cType.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         combo_cType.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Bsc", "Msc" }));
         jPanel1.add(combo_cType);
-        combo_cType.setBounds(318, 171, 51, 23);
+        combo_cType.setBounds(318, 171, 61, 23);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel1.setText("Course Type:");
@@ -79,20 +83,20 @@ public class CAddSubject extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel2.setText("Subject Name");
         jPanel1.add(jLabel2);
-        jLabel2.setBounds(77, 373, 86, 17);
+        jLabel2.setBounds(77, 371, 86, 17);
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel3.setText("Subject ID");
         jPanel1.add(jLabel3);
-        jLabel3.setBounds(77, 310, 65, 17);
+        jLabel3.setBounds(77, 308, 65, 17);
 
         txtsubID.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jPanel1.add(txtsubID);
-        txtsubID.setBounds(292, 307, 132, 23);
+        txtsubID.setBounds(292, 305, 132, 23);
 
         txtname.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jPanel1.add(txtname);
-        txtname.setBounds(292, 370, 132, 23);
+        txtname.setBounds(292, 368, 132, 23);
 
         jButton1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jButton1.setText("Add");
@@ -102,7 +106,7 @@ public class CAddSubject extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jButton1);
-        jButton1.setBounds(450, 548, 57, 25);
+        jButton1.setBounds(438, 546, 69, 25);
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel4.setText("Add Subject");
@@ -112,12 +116,12 @@ public class CAddSubject extends javax.swing.JFrame {
         jLabel5.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel5.setText("No of credits");
         jPanel1.add(jLabel5);
-        jLabel5.setBounds(77, 431, 77, 17);
+        jLabel5.setBounds(77, 429, 77, 17);
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel6.setText("Price");
         jPanel1.add(jLabel6);
-        jLabel6.setBounds(77, 495, 29, 17);
+        jLabel6.setBounds(77, 493, 29, 17);
 
         txtcredits.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         txtcredits.addActionListener(new java.awt.event.ActionListener() {
@@ -126,11 +130,11 @@ public class CAddSubject extends javax.swing.JFrame {
             }
         });
         jPanel1.add(txtcredits);
-        txtcredits.setBounds(292, 428, 132, 23);
+        txtcredits.setBounds(292, 426, 132, 23);
 
         txtprice.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jPanel1.add(txtprice);
-        txtprice.setBounds(292, 492, 132, 23);
+        txtprice.setBounds(292, 490, 132, 23);
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel7.setText("Faculty:");
@@ -140,7 +144,7 @@ public class CAddSubject extends javax.swing.JFrame {
         combo_faculty.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         combo_faculty.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Computing", "Business", "Engineering" }));
         jPanel1.add(combo_faculty);
-        combo_faculty.setBounds(318, 80, 99, 23);
+        combo_faculty.setBounds(318, 80, 106, 23);
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel8.setText("Semester:");
@@ -155,19 +159,24 @@ public class CAddSubject extends javax.swing.JFrame {
             }
         });
         jPanel1.add(combo_sem);
-        combo_sem.setBounds(178, 243, 63, 23);
+        combo_sem.setBounds(178, 243, 82, 23);
 
         jLabel9.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel9.setText("Category:");
         jPanel1.add(jLabel9);
-        jLabel9.setBounds(292, 246, 62, 17);
+        jLabel9.setBounds(287, 246, 62, 17);
 
         combo_category.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         combo_category.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2" }));
         jPanel1.add(combo_category);
-        combo_category.setBounds(388, 243, 36, 23);
+        combo_category.setBounds(371, 243, 53, 23);
 
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/nsbm/images/back.png"))); // NOI18N
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
         jPanel1.add(jButton2);
         jButton2.setBounds(10, 11, 57, 33);
 
@@ -313,6 +322,13 @@ public class CAddSubject extends javax.swing.JFrame {
     private void combo_semActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_combo_semActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_combo_semActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        CHome h=new CHome();
+        h.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments

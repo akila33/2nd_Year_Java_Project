@@ -60,7 +60,7 @@ public class ConnectMail {
             
         } catch (MessagingException e) 
         {
-            JOptionPane.showMessageDialog(null,"Something happened!");
+            JOptionPane.showMessageDialog(null,"Email not send!");
             
             throw new RuntimeException(e);
         }

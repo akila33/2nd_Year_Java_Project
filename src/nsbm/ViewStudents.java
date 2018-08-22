@@ -32,6 +32,11 @@ public class ViewStudents extends javax.swing.JFrame {
         setResizable(false);
         
         conn=MySqlConnect.ConnectDB();
+        
+        jButton1.setOpaque(false);
+        jButton1.setContentAreaFilled(false);
+        jButton1.setBorderPainted(false);
+        
         fetch_com_bsc();
         fetch_com_msc();
         fetch_bus_bsc();

@@ -492,7 +492,7 @@ public class CBacFebEnroll extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel1.setText("Enroll Details");
         jPanel1.add(jLabel1);
-        jLabel1.setBounds(214, 26, 119, 22);
+        jLabel1.setBounds(248, 26, 119, 22);
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel2.setText("Registration number:");
@@ -524,28 +524,28 @@ public class CBacFebEnroll extends javax.swing.JFrame {
         jLabel5.setBounds(307, 181, 44, 17);
 
         jPanel1.add(sub11);
-        sub11.setBounds(51, 216, 28, 20);
+        sub11.setBounds(51, 216, 70, 20);
 
         jPanel1.add(sub12);
-        sub12.setBounds(189, 216, 28, 20);
+        sub12.setBounds(189, 216, 70, 20);
 
         jPanel1.add(sub21);
-        sub21.setBounds(307, 216, 28, 20);
+        sub21.setBounds(307, 216, 70, 20);
 
         jPanel1.add(sub22);
-        sub22.setBounds(433, 216, 28, 20);
+        sub22.setBounds(433, 216, 80, 20);
 
         jPanel1.add(sub13);
-        sub13.setBounds(51, 281, 28, 20);
+        sub13.setBounds(51, 305, 70, 20);
 
         jPanel1.add(sub14);
-        sub14.setBounds(189, 281, 28, 20);
+        sub14.setBounds(189, 305, 70, 20);
 
         jPanel1.add(sub23);
-        sub23.setBounds(307, 281, 28, 20);
+        sub23.setBounds(307, 305, 70, 20);
 
         jPanel1.add(sub24);
-        sub24.setBounds(433, 281, 28, 20);
+        sub24.setBounds(433, 305, 80, 20);
 
         jButton1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jButton1.setText("Submit");

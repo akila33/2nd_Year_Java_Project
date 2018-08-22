@@ -268,7 +268,7 @@ public class AddStudent extends javax.swing.JFrame {
                     pst.setString(2,txtlName.getText());
                     pst.setString(3,txtdob.getText());
                     pst.setString(4,txtaddress.getText());
-                    pst.setString(5,txtemail.getText());
+                    pst.setString(5,txttelNo.getText());
                     pst.setString(6,txtemail.getText());
 
                     pst.setString(7,value2);
@@ -278,10 +278,12 @@ public class AddStudent extends javax.swing.JFrame {
                         if(value2=="Feb"){
                             CBacFebPreEducation cbfpe=new CBacFebPreEducation(fac);
                             cbfpe.setVisible(true);
+                            dispose();
                         }
                         else if(value2=="July"){
                             CBacJulyPreEducation cbjpe=new CBacJulyPreEducation(fac);
                             cbjpe.setVisible(true);
+                            dispose();
                         }
 
                     }catch(Exception e){
@@ -298,7 +300,7 @@ public class AddStudent extends javax.swing.JFrame {
                         pst.setString(2,txtlName.getText());
                         pst.setString(3,txtdob.getText());
                         pst.setString(4,txtaddress.getText());
-                        pst.setString(5,txtemail.getText());
+                        pst.setString(5,txttelNo.getText());
                         pst.setString(6,txtemail.getText());
 
                         pst.setString(7,value2);
@@ -309,10 +311,12 @@ public class AddStudent extends javax.swing.JFrame {
                             if(value2=="Feb"){
                                 CMasFebPreEducation cmfpe=new CMasFebPreEducation(fac);
                                 cmfpe.setVisible(true);
+                                dispose();
                             }
                             else if(value2=="July"){
                                 CMasJulyPreEducation cmjpe=new CMasJulyPreEducation(fac);
                                 cmjpe.setVisible(true);
+                                dispose();
                             }
                         }catch(Exception e){
                             JOptionPane.showMessageDialog(null, e);
@@ -330,7 +334,7 @@ public class AddStudent extends javax.swing.JFrame {
                             pst.setString(2,txtlName.getText());
                             pst.setString(3,txtdob.getText());
                             pst.setString(4,txtaddress.getText());
-                            pst.setString(5,txtemail.getText());
+                            pst.setString(5,txttelNo.getText());
                             pst.setString(6,txtemail.getText());
 
                             pst.setString(7,value2);
@@ -340,10 +344,12 @@ public class AddStudent extends javax.swing.JFrame {
                                 if(value2=="Feb"){
                                     CBacFebPreEducation cbfpe=new CBacFebPreEducation(fac);
                                     cbfpe.setVisible(true);
+                                    dispose();
                                 }
                                 else if(value2=="July"){
                                     CBacJulyPreEducation cbjpe=new CBacJulyPreEducation(fac);
                                     cbjpe.setVisible(true);
+                                    dispose();
                                 }
 
                             }catch(Exception e){
@@ -360,7 +366,7 @@ public class AddStudent extends javax.swing.JFrame {
                                 pst.setString(2,txtlName.getText());
                                 pst.setString(3,txtdob.getText());
                                 pst.setString(4,txtaddress.getText());
-                                pst.setString(5,txtemail.getText());
+                                pst.setString(5,txttelNo.getText());
                                 pst.setString(6,txtemail.getText());
 
                                 pst.setString(7,value2);
@@ -371,10 +377,12 @@ public class AddStudent extends javax.swing.JFrame {
                                     if(value2=="Feb"){
                                         CMasFebPreEducation cmfpe=new CMasFebPreEducation(fac);
                                         cmfpe.setVisible(true);
+                                        dispose();
                                     }
                                     else if(value2=="July"){
                                         CMasJulyPreEducation cmjpe=new CMasJulyPreEducation(fac);
                                         cmjpe.setVisible(true);
+                                        dispose();
                                     }
                                 }catch(Exception e){
                                     JOptionPane.showMessageDialog(null, e);
@@ -392,7 +400,7 @@ public class AddStudent extends javax.swing.JFrame {
                                     pst.setString(2,txtlName.getText());
                                     pst.setString(3,txtdob.getText());
                                     pst.setString(4,txtaddress.getText());
-                                    pst.setString(5,txtemail.getText());
+                                    pst.setString(5,txttelNo.getText());
                                     pst.setString(6,txtemail.getText());
 
                                     pst.setString(7,value2);
@@ -402,10 +410,12 @@ public class AddStudent extends javax.swing.JFrame {
                                         if(value2=="Feb"){
                                             CBacFebPreEducation cbfpe=new CBacFebPreEducation(fac);
                                             cbfpe.setVisible(true);
+                                            dispose();
                                         }
                                         else if(value2=="July"){
                                             CBacJulyPreEducation cbjpe=new CBacJulyPreEducation(fac);
                                             cbjpe.setVisible(true);
+                                            dispose();
                                         }
 
                                     }catch(Exception e){
@@ -422,7 +432,7 @@ public class AddStudent extends javax.swing.JFrame {
                                         pst.setString(2,txtlName.getText());
                                         pst.setString(3,txtdob.getText());
                                         pst.setString(4,txtaddress.getText());
-                                        pst.setString(5,txtemail.getText());
+                                        pst.setString(5,txttelNo.getText());
                                         pst.setString(6,txtemail.getText());
 
                                         pst.setString(7,value2);
@@ -433,10 +443,12 @@ public class AddStudent extends javax.swing.JFrame {
                                             if(value2=="Feb"){
                                                 CMasFebPreEducation cmfpe=new CMasFebPreEducation(fac);
                                                 cmfpe.setVisible(true);
+                                                dispose();
                                             }
                                             else if(value2=="July"){
                                                 CMasJulyPreEducation cmjpe=new CMasJulyPreEducation(fac);
                                                 cmjpe.setVisible(true);
+                                                dispose();
                                             }
                                         }catch(Exception e){
                                             JOptionPane.showMessageDialog(null, e);
@@ -477,7 +489,7 @@ public class AddStudent extends javax.swing.JFrame {
                     pst.setString(2,txtlName.getText());
                     pst.setString(3,txtdob.getText());
                     pst.setString(4,txtaddress.getText());
-                    pst.setString(5,txtemail.getText());
+                    pst.setString(5,txttelNo.getText());
                     pst.setString(6,txtemail.getText());
 
                     pst.setString(7,value2);
@@ -507,7 +519,7 @@ public class AddStudent extends javax.swing.JFrame {
                         pst.setString(2,txtlName.getText());
                         pst.setString(3,txtdob.getText());
                         pst.setString(4,txtaddress.getText());
-                        pst.setString(5,txtemail.getText());
+                        pst.setString(5,txttelNo.getText());
                         pst.setString(6,txtemail.getText());
 
                         pst.setString(7,value2);
@@ -539,7 +551,7 @@ public class AddStudent extends javax.swing.JFrame {
                             pst.setString(2,txtlName.getText());
                             pst.setString(3,txtdob.getText());
                             pst.setString(4,txtaddress.getText());
-                            pst.setString(5,txtemail.getText());
+                            pst.setString(5,txttelNo.getText());
                             pst.setString(6,txtemail.getText());
 
                             pst.setString(7,value2);
@@ -569,7 +581,7 @@ public class AddStudent extends javax.swing.JFrame {
                                 pst.setString(2,txtlName.getText());
                                 pst.setString(3,txtdob.getText());
                                 pst.setString(4,txtaddress.getText());
-                                pst.setString(5,txtemail.getText());
+                                pst.setString(5,txttelNo.getText());
                                 pst.setString(6,txtemail.getText());
 
                                 pst.setString(7,value2);
@@ -601,7 +613,7 @@ public class AddStudent extends javax.swing.JFrame {
                                     pst.setString(2,txtlName.getText());
                                     pst.setString(3,txtdob.getText());
                                     pst.setString(4,txtaddress.getText());
-                                    pst.setString(5,txtemail.getText());
+                                    pst.setString(5,txttelNo.getText());
                                     pst.setString(6,txtemail.getText());
 
                                     pst.setString(7,value2);
@@ -631,7 +643,7 @@ public class AddStudent extends javax.swing.JFrame {
                                         pst.setString(2,txtlName.getText());
                                         pst.setString(3,txtdob.getText());
                                         pst.setString(4,txtaddress.getText());
-                                        pst.setString(5,txtemail.getText());
+                                        pst.setString(5,txttelNo.getText());
                                         pst.setString(6,txtemail.getText());
 
                                         pst.setString(7,value2);

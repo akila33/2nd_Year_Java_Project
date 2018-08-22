@@ -308,10 +308,10 @@ public class CMasJulyEnroll extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jButton1);
-        jButton1.setBounds(409, 457, 75, 25);
+        jButton1.setBounds(379, 418, 75, 25);
 
         jPanel1.add(sub21);
-        sub21.setBounds(83, 226, 28, 20);
+        sub21.setBounds(83, 226, 80, 20);
 
         sub22.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -319,13 +319,13 @@ public class CMasJulyEnroll extends javax.swing.JFrame {
             }
         });
         jPanel1.add(sub22);
-        sub22.setBounds(244, 226, 28, 20);
+        sub22.setBounds(244, 226, 80, 20);
 
         jPanel1.add(sub23);
-        sub23.setBounds(83, 327, 28, 20);
+        sub23.setBounds(83, 291, 80, 20);
 
         jPanel1.add(sub24);
-        sub24.setBounds(244, 327, 28, 20);
+        sub24.setBounds(244, 291, 80, 20);
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/nsbm/images/wallpaper4.jpg"))); // NOI18N
         jPanel1.add(jLabel5);
@@ -427,7 +427,7 @@ public class CMasJulyEnroll extends javax.swing.JFrame {
                     JOptionPane.showMessageDialog(null, e);
                 }
             }
-            PaymentDetails pd=new PaymentDetails();
+            PaymentDetails pd=new PaymentDetails(values,fac);
             pd.setVisible(true);
         }
         
@@ -504,7 +504,7 @@ public class CMasJulyEnroll extends javax.swing.JFrame {
                     JOptionPane.showMessageDialog(null, e);
                 }
             }
-            PaymentDetails pd=new PaymentDetails();
+            PaymentDetails pd=new PaymentDetails(values,fac);
             pd.setVisible(true);
         }
         
@@ -581,7 +581,7 @@ public class CMasJulyEnroll extends javax.swing.JFrame {
                     JOptionPane.showMessageDialog(null, e);
                 }
             }
-            PaymentDetails pd=new PaymentDetails();
+            PaymentDetails pd=new PaymentDetails(values,fac);
             pd.setVisible(true);
         }
         

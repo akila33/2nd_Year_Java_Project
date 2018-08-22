@@ -59,6 +59,7 @@ public class CBacFebPreEducation extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(500, 500));
 
         jPanel1.setLayout(null);
 
@@ -163,13 +164,10 @@ public class CBacFebPreEducation extends javax.swing.JFrame {
                 pst.setString(2,txtscore.getText());
                 pst.setString(3,txtrank.getText());
                 pst.executeUpdate();
-                if(true){
-                    CBacFebEnroll cbfe=new CBacFebEnroll(fac);
-                    cbfe.setVisible(true);
-                }
-                else{
-                    JOptionPane.showMessageDialog(null, "Invalid username or password","Access Denied", JOptionPane.ERROR_MESSAGE);
-                }
+                
+                CBacFebEnroll cbfe=new CBacFebEnroll(fac);
+                cbfe.setVisible(true);
+                
             }catch(Exception e){
                 JOptionPane.showMessageDialog(null, e);
             }
@@ -184,13 +182,10 @@ public class CBacFebPreEducation extends javax.swing.JFrame {
                 pst.setString(2,txtscore.getText());
                 pst.setString(3,txtrank.getText());
                 pst.executeUpdate();
-                if(true){
-                    CBacFebEnroll cbfe=new CBacFebEnroll(fac);
-                    cbfe.setVisible(true);
-                }
-                else{
-                    JOptionPane.showMessageDialog(null, "Invalid username or password","Access Denied", JOptionPane.ERROR_MESSAGE);
-                }
+
+                CBacFebEnroll cbfe=new CBacFebEnroll(fac);
+                cbfe.setVisible(true);
+                
             }catch(Exception e){
                 JOptionPane.showMessageDialog(null, e);
             }
@@ -205,13 +200,10 @@ public class CBacFebPreEducation extends javax.swing.JFrame {
                 pst.setString(2,txtscore.getText());
                 pst.setString(3,txtrank.getText());
                 pst.executeUpdate();
-                if(true){
-                    CBacFebEnroll cbfe=new CBacFebEnroll(fac);
-                    cbfe.setVisible(true);
-                }
-                else{
-                    JOptionPane.showMessageDialog(null, "Invalid username or password","Access Denied", JOptionPane.ERROR_MESSAGE);
-                }
+                
+                CBacFebEnroll cbfe=new CBacFebEnroll(fac);
+                cbfe.setVisible(true);
+                
             }catch(Exception e){
                 JOptionPane.showMessageDialog(null, e);
             }

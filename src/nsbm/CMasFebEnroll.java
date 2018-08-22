@@ -511,31 +511,31 @@ public class CMasFebEnroll extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jButton1);
-        jButton1.setBounds(438, 432, 75, 25);
+        jButton1.setBounds(406, 467, 75, 25);
 
         jPanel1.add(sub11);
-        sub11.setBounds(65, 207, 28, 20);
+        sub11.setBounds(65, 207, 80, 20);
 
         jPanel1.add(sub12);
-        sub12.setBounds(180, 207, 28, 20);
+        sub12.setBounds(189, 207, 80, 20);
 
         jPanel1.add(sub21);
-        sub21.setBounds(307, 207, 28, 20);
+        sub21.setBounds(307, 207, 80, 20);
 
         jPanel1.add(sub22);
-        sub22.setBounds(438, 207, 28, 20);
+        sub22.setBounds(426, 207, 80, 20);
 
         jPanel1.add(sub24);
-        sub24.setBounds(438, 290, 28, 20);
+        sub24.setBounds(426, 272, 80, 20);
 
         jPanel1.add(sub23);
-        sub23.setBounds(307, 290, 28, 20);
+        sub23.setBounds(307, 272, 80, 20);
 
         jPanel1.add(sub14);
-        sub14.setBounds(180, 290, 28, 20);
+        sub14.setBounds(189, 272, 80, 20);
 
         jPanel1.add(sub13);
-        sub13.setBounds(65, 290, 28, 20);
+        sub13.setBounds(65, 272, 80, 20);
 
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/nsbm/images/wallpaper4.jpg"))); // NOI18N
         jPanel1.add(jLabel6);
@@ -646,7 +646,7 @@ public class CMasFebEnroll extends javax.swing.JFrame {
                     JOptionPane.showMessageDialog(null, e);
                 }
             }
-            PaymentDetails pd=new PaymentDetails();
+            PaymentDetails pd=new PaymentDetails(values,fac);
             pd.setVisible(true);
         }
         
@@ -725,7 +725,7 @@ public class CMasFebEnroll extends javax.swing.JFrame {
                     JOptionPane.showMessageDialog(null, e);
                 }
             }
-            PaymentDetails pd=new PaymentDetails();
+            PaymentDetails pd=new PaymentDetails(values,fac);
             pd.setVisible(true);
         }
         
@@ -807,7 +807,7 @@ public class CMasFebEnroll extends javax.swing.JFrame {
                     JOptionPane.showMessageDialog(null, e);
                 }
             }
-            PaymentDetails pd=new PaymentDetails();
+            PaymentDetails pd=new PaymentDetails(values,fac);
             pd.setVisible(true);
         }
         

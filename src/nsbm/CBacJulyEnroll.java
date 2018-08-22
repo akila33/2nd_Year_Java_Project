@@ -310,16 +310,11 @@ public class CBacJulyEnroll extends javax.swing.JFrame {
         jPanel1.add(jButton1);
         jButton1.setBounds(390, 495, 75, 25);
 
-        sub21.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                sub21ActionPerformed(evt);
-            }
-        });
         jPanel1.add(sub21);
-        sub21.setBounds(83, 216, 28, 20);
+        sub21.setBounds(83, 216, 80, 20);
 
         jPanel1.add(sub22);
-        sub22.setBounds(249, 216, 28, 20);
+        sub22.setBounds(272, 216, 80, 20);
 
         sub23.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -327,10 +322,10 @@ public class CBacJulyEnroll extends javax.swing.JFrame {
             }
         });
         jPanel1.add(sub23);
-        sub23.setBounds(83, 314, 28, 20);
+        sub23.setBounds(83, 314, 80, 20);
 
         jPanel1.add(sub24);
-        sub24.setBounds(249, 314, 28, 20);
+        sub24.setBounds(272, 314, 80, 20);
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/nsbm/images/wallpaper4.jpg"))); // NOI18N
         jPanel1.add(jLabel5);
@@ -432,7 +427,7 @@ public class CBacJulyEnroll extends javax.swing.JFrame {
                     JOptionPane.showMessageDialog(null, e);
                 }
             }
-            PaymentDetails pd=new PaymentDetails();
+            PaymentDetails pd=new PaymentDetails(values,fac);
             pd.setVisible(true);
         }
         
@@ -509,7 +504,7 @@ public class CBacJulyEnroll extends javax.swing.JFrame {
                     JOptionPane.showMessageDialog(null, e);
                 }
             }
-            PaymentDetails pd=new PaymentDetails();
+            PaymentDetails pd=new PaymentDetails(values,fac);
             pd.setVisible(true);
         }
         
@@ -586,7 +581,7 @@ public class CBacJulyEnroll extends javax.swing.JFrame {
                     JOptionPane.showMessageDialog(null, e);
                 }
             }
-            PaymentDetails pd=new PaymentDetails();
+            PaymentDetails pd=new PaymentDetails(values,fac);
             pd.setVisible(true);
         }
         
@@ -596,10 +591,6 @@ public class CBacJulyEnroll extends javax.swing.JFrame {
     private void sub23ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sub23ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_sub23ActionPerformed
-
-    private void sub21ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sub21ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_sub21ActionPerformed
 
     /**
      * @param args the command line arguments
